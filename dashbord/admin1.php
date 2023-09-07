@@ -11,23 +11,31 @@
 
 <body class="container-fluid">
     <div class="pagecomplite row">
-        <div class="leftPart my-5 col-3 border text-center">
-            <div>
-                <label for="sheetProduct"></label>
-                <button id="sheetProduct" type="button">Fiche produits</button>
+        <div class="leftPart sticky-top my-5   col-3 text-center">
+        <div>
+                <label class="my-4" for="accueil"></label>
+                <button class="btn btn-success" id="accueil" type="button">Page d'accueil</button>
             </div>
             <div>
-                <label class="my-3" for="galleries"></label>
-                <button id="galleries" type="button">Galerie</button>
+                <label class="my-4" for="sheetProduct"></label>
+                <button class="btn btn-success" id="sheetProduct" type="button">Fiche produits</button>
             </div>
             <div>
-                <label class="my-3" for="contact"></label>
-                <button id="contact" type="button">Contacts</button>
+                <label class="my-4" for="galleries"></label>
+                <button class="btn btn-success" id="galleries" type="button">Galerie</button>
             </div>
-            
+            <div>
+                <label class="my-4" for="contact"></label>
+                <button class="btn btn-success" id="contact" type="button">Contacts</button>
+            </div>
+            <div>
+                <label class="my-4" for="messages"></label>
+                <button class="btn btn-success" id="messages" type="button">Messages</button>
+            </div>
+
         </div>
 
-        <div class="rightPart col-8 border">
+        <div class="rightPart col-9">
 
 
 

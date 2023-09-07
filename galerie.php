@@ -24,47 +24,53 @@
                     <li class="nav-item"><a class="nav-link" href="#">Mon compte</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Connection</a></li>
                 </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
+
+
         </div>
     </nav>
-    
+
     <div class="gallery">
         <div class="row row-cols-1 row-cols-md-4 gap-5 d-flex justify-content-center my-5">
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
             <div class="card col">
                 <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                    <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Card title</h5>
             </div>
         </div>
     </div>

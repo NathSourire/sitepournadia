@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Produits</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Astuces</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Connection</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">déconnection</a></li>
                 </ul>
             </div>
         </div>
@@ -222,6 +222,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                         </div>
                     </div>
                     <p class="ms-2">* Champ obligatoire</p>
+                </div>
             </fieldset>
         </form>
     </div>

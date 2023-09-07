@@ -50,7 +50,7 @@
                 <input class="form-control ms-3" type="number" name="quanTity" id="quantity">
             </div>
             <div>
-                <button class="btn btn-outline-danger my-3 ms-3" type="submit">Validation</button>
+                <button class="btn btn-success my-3 ms-3" type="submit">Validation</button>
             </div>
         </form>
 
