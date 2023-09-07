@@ -1,24 +1,15 @@
-html{
-    font-size: 1rem;    
+html {
+    font-size: 1rem;
     background-color: #E9D8A6;
 }
-body{        
-    font-family:Gantari;
-    color:#001219 ;
+
+body {
+    font-family: Gantari;
+    color: #001219;
     background-color: #E9D8A6;
 }
-.leftPart{
-
-
-}
-.rightPart{
-
-
-
-}
-
 
 @font-face {
-    font-family:Gantari ;
+    font-family: Gantari;
     src: url(../font/Gantari-Regular.ttf);
 }

@@ -120,8 +120,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     <title>Site Nad !</title>
 </head>
 
-<body>
-    <nav id="headNav" class="navbar navbar-expand-lg ">
+<body class="container-fluid">
+    <nav id="headNav" class="navbar sticky-top navbar-expand-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

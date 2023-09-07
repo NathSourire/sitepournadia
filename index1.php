@@ -12,8 +12,8 @@
     <title>Site Nadia !</title>
 </head>
 
-<body>
-    <nav id="headNav" class="navbar navbar-expand-lg ">
+<body class="container-fluid">
+    <nav id="headNav" class="navbar sticky-top navbar-expand-lg ">
         <div  class="container-fluid">
             <a class="navbar-brand" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -24,14 +24,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Produits</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Astuces</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">panier</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mon compte</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Connection</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="imgBackground opacity-75 row p-3">
+    <div class="imgBackground opacity-75 row p-5">
         <img src="./public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
         <p>je teste du texte sur mon image</p>
     </div>

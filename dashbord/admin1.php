@@ -9,20 +9,32 @@
     <title>Site Nadia !</title>
 </head>
 
-<body class="container-fluid" >
-    <div class="row" >
-<div class="leftPart col-4 border text-center" ></div>
+<body class="container-fluid">
+    <div class="pagecomplite row">
+        <div class="leftPart my-5 col-3 border text-center">
+            <div>
+                <label for="sheetProduct"></label>
+                <button id="sheetProduct" type="button">Fiche produits</button>
+            </div>
+            <div>
+                <label class="my-3" for="galleries"></label>
+                <button id="galleries" type="button">Galerie</button>
+            </div>
+            <div>
+                <label class="my-3" for="contact"></label>
+                <button id="contact" type="button">Contacts</button>
+            </div>
+            
+        </div>
+
+        <div class="rightPart col-8 border">
 
 
 
+        </div>
 
 
-
-
-<div class="rightPart col-8 border"></div>
-
-
-</div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

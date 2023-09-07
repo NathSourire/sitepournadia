@@ -2,7 +2,6 @@ html{
     font-size: 1rem;
 }
 body{        
-
     font-family:Gantari;
     background-color: #E9D8A6;
     color:#001219 ;
@@ -17,8 +16,14 @@ body{
 #headNav{
     background-color: #E9D8A6;
 }
-.imgBackground{
-    text-align: center;
+
+.card{
+    display: flex;
+	flex-wrap: wrap;
+	text-align: center; 
+	border-radius: 10px;
+	cursor:pointer;
+	border: 1px solid rgb(7, 83, 22)
 }
 
 
