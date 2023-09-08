@@ -59,32 +59,29 @@
             </div>
         </div>
     </div>
-    <div class="cardProduit row grid gap-3 justify-content-evenly mt-2 p-4">
-        <div class="card text-center col-9 col-md-3">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn">Go somewhere</a>
+    <h2 class="text-center my-5" >Produit du moment</h2>
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./public/assets/img/Cakeorange.jpg" class="d-block w-100" alt="Cake à orange">
+            </div>
+            <div class="carousel-item">
+                <img src="./public/assets/img/Tartecitronmeringué.jpg" class="d-block w-100" alt="Tarte au citron meringué">
+            </div>
+            <div class="carousel-item">
+                <img src="./public/assets/img/Gateauchocolat.jpg" class="d-block w-100" alt="Gateau au chocolat">
             </div>
         </div>
-        <div class="card text-center col-9 col-md-3">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card text-center col-9 col-md-3">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <img class=" img-fluid" src="./public/assets/img/Babarhum.jpg" alt="Baba aux rhum">
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn">Go somewhere</a>
-            </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
     <footer>
         <p>bla bla bla</p>
     </footer>

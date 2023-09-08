@@ -1,36 +1,42 @@
-html{
+html {
     font-size: 1rem;
 }
-body{        
-    font-family:Gantari;
+
+body {
+    font-family: Gantari;
     background-color: #E9D8A6;
-    color:#001219 ;
+    color: #001219;
 }
-.cardProduit .btn{
-    background-color:#94D2BD ;
-    color:#001219 ;
+
+.cardProduit .btn {
+    background-color: #94D2BD;
+    color: #001219;
 }
+
 .nav li a {
     color: #001219;
 }
-#headNav{
+
+#headNav {
     background-color: #E9D8A6;
 }
 
-.card{
+.card {
     display: flex;
-	flex-wrap: wrap;
-	text-align: center; 
-	border-radius: 10px;
-	cursor:pointer;
-	border: 1px solid rgb(7, 83, 22)
+    flex-wrap: wrap;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #E9D8A6;
 }
 
+.gallery img {
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.502) 0px 10px 36px 0px, rgba(0, 0, 0, 0.359) 0px 0px 0px 1px;
+}
 
 
 @font-face {
-    font-family:Gantari ;
+    font-family: Gantari;
     src: url(../font/Gantari-Regular.ttf);
 }
-
-

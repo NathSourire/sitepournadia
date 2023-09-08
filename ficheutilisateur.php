@@ -43,14 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
     // récuperation du prénom nettoyage et validation
     $lastname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);
-    if (empty($firstname)) {
-        $errors['firstname'] = 'Veuillez entrer un nom de famille ';
-    } else {
+    // if (empty($firstname)) {
+    //     $errors['firstname'] = 'Veuillez entrer un nom de famille ';
+    // } else {
         $isOk = filter_var($firstname, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/' . REGEX_NAME . '/']]);
         if (!$isOk) {
             $errors['firstname'] = 'Veuillez entrer un prénom valide';
         }
-    }
+    // }
     // récuperation du code postale  nettoyage et validation
     $zipCode = filter_input(INPUT_POST, 'zipCode', FILTER_SANITIZE_NUMBER_INT);
     if (empty($zipCode)) {
@@ -63,21 +63,21 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
     // récuperation de la civilité nettoyage et validation
     $civility = filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_NUMBER_INT);
-    if (empty($civility)) {
-        if ($civility != 1 && $civility != 2) {
-            $errors['$civility'] = 'Veuillez entrer un genre valide';
-        }
-    }
+    // if (empty($civility)) {
+    //     if ($civility != 1 && $civility != 2) {
+    //         $errors['$civility'] = 'Veuillez entrer un genre valide';
+    //     }
+    // }
     // récuperation de la date anniversaire nettoyage et validation
     $dateOfBirthday = filter_input(INPUT_POST, 'dateOfBirthday', FILTER_SANITIZE_NUMBER_INT);
-    if (empty($dateOfBirthday)) {
-        $errors['dateOfBirthday'] = 'Veuillez entrer une date de naissance';
-    } else {
+    // if (empty($dateOfBirthday)) {
+    //     $errors['dateOfBirthday'] = 'Veuillez entrer une date de naissance';
+    // } else {
         $isOk = filter_var($dateOfBirthday, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/' . REGEX_BIRTHDAY . '/']]);
         if (!$isOk) {
             $errors['dateOfBirthday'] = 'Veuillez entrer une date de naissance valide';
         }
-    }
+    // }
     //récuperation et nettoyage du message
     $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_SPECIAL_CHARS);
     if (!empty($message)) {
@@ -87,14 +87,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
     //récupération et nettoyage du nom de la ville
     $cities = filter_input(INPUT_POST, 'cities', FILTER_SANITIZE_SPECIAL_CHARS);
-    if (empty($cities)) {
-        $errors['cities'] = 'Veuillez entrer un nom de famille ';
-    } else {
+    // if (empty($cities)) {
+    //     $errors['cities'] = 'Veuillez entrer un nom de ville ';
+    // } else {
         $isOk = filter_var($cities, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/' . REGEX_NAME . '/']]);
         if (!$isOk) {
             $errors['cities'] = 'Veuillez entrer un prénom valide';
         }
-    }
+    // }
     $numbertel = filter_input(INPUT_POST, 'numbertel', FILTER_SANITIZE_NUMBER_INT);
     if (empty($numbertel)) {
         $errors['numbertel'] = 'Veuillez entrer un numéro de téléphone';
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     </nav>
     <div>
         <h2>Votre identité</h2>
-        <form id="form" enctype="multipart/form-data" method="post" novalidate>
+        <form id="form" enctype="multipart/form-data" method="post" >
             <fieldset class="container-fluid ident">
                 <div class="row results my-5 row-gap-4">
                     <div>
@@ -160,15 +160,15 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                             </p>
                         </div>
                         <div>
-                            <label class="form-label" for="firstnames">PréNom *</label>
-                            <input class="form-control" type="text" id="firstnames" name="firstname" pattern="<?= REGEX_NAME ?>" required>
+                            <label class="form-label" for="firstnames">Prénom *</label>
+                            <input class="form-control" type="text" id="firstnames" name="firstname" pattern="<?= REGEX_NAME ?>">
                             <p class="red">
                                 <?= $errors['firstname'] ?? '' ?>
                             </p>
                         </div>
                         <div>
-                            <label class="form-label" for="birthdaydate">Date de naissance *</label>
-                            <input class="form-control" type="date" id="birthdaydate" name="dateOfBirthday" max="<?= $dateNow ?>" required>
+                            <label class="form-label" for="birthdaydate">Date de naissance </label>
+                            <input class="form-control" type="date" id="birthdaydate" name="dateOfBirthday" max="<?= $dateNow ?>">
                             <p class="red">
                                 <?= $errors['dateOfBirthday'] ?? '' ?>
                             </p>
