@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         }
     }
     // récuperation du prénom nettoyage et validation
-    $lastname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);
+    $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);
     // if (empty($firstname)) {
     //     $errors['firstname'] = 'Veuillez entrer un nom de famille ';
     // } else {
