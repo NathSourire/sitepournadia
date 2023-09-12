@@ -9,7 +9,18 @@ body {
     background-color: #E9D8A6;
 }
 
+.leftPart {
+    height: 300vh;
+}
+
+.leftPart a {
+    text-decoration: none;
+    color: #E9D8A6;
+    font-size: 22px;
+}
+
+
 @font-face {
-    font-family: Gantari;
+    font-family: Gantari !important;
     src: url(../font/Gantari-Regular.ttf);
 }

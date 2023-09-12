@@ -11,33 +11,35 @@
 
 <body class="container-fluid">
     <div class="pagecomplite row">
-        <div class="leftPart sticky-top my-5   col-3 text-center">
-        <div>
-                <label class="my-4" for="accueil"></label>
-                <button class="btn btn-success" id="accueil" type="button">Page d'accueil</button>
+        <div class="leftPart fs-5 sticky-top bg-success  col-3 text-center">
+            <div class="my-5 ">
+                <a class="accueil" href="https://" target="_blank">Page Accueil</a>
             </div>
-            <div>
-                <label class="my-4" for="sheetProduct"></label>
-                <button class="btn btn-success" id="sheetProduct" type="button">Fiche produits</button>
+            <div class="my-5">
+                <a class="sheetProduct" href="https://" target="_blank">Fiche produit</a>
             </div>
-            <div>
-                <label class="my-4" for="galleries"></label>
-                <button class="btn btn-success" id="galleries" type="button">Galerie</button>
+            <div class="my-5">
+                <a class="galleries" href="https://" target="_blank">Galerie</a>
             </div>
-            <div>
-                <label class="my-4" for="contact"></label>
-                <button class="btn btn-success" id="contact" type="button">Contacts</button>
+            <div class="my-5">
+                <a class="contact" href="https://" target="_blank">Contacts</a>
             </div>
-            <div>
-                <label class="my-4" for="messages"></label>
-                <button class="btn btn-success" id="messages" type="button">Messages</button>
+            <div class="my-5">
+                <a class="messages" href="https://" target="_blank">Messages</a>
             </div>
-
         </div>
 
         <div class="rightPart col-9">
 
+            <!-- Page d'accueil -->
 
+            <!-- Fiche produit -->
+
+            <!-- Galerie -->
+
+            <!-- Contact -->
+
+            <!-- Message -->
 
         </div>
 
