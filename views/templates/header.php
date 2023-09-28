@@ -13,16 +13,17 @@
 <body class="container-fluid">
     <nav id="headNav" class="navbar sticky-top navbar-expand-lg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/controllers/accueil-ctrl.php">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/views/gallery.php">Gallerie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Panier</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Mon compte</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Connection</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/basket-ctrl.php">Panier</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignUp-ctrl.php">Connection</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

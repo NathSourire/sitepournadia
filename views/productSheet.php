@@ -4,7 +4,7 @@
             <p>Nom du produit</p>
         </div>
         <div class="imgtext my-5 row">
-            <img class="col-5 ms-5" src="./public/assets/img/Babarhum.jpg " alt="">
+            <img class="col-5 ms-5" src="/public/assets/img/Babarhum.jpg " alt="">
             <p class="col-5 ms-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aperiam amet suscipit laudantium vel.
                 Consequatur deserunt id voluptate error corporis? Adipisci culpa consequatur ratione quaerat labore
