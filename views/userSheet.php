@@ -7,15 +7,6 @@
                 <div class="row results my-5 row-gap-4">
                     <div class="inputform" >
                         <div>
-                            <label class="form-label" for="civility1">Civilité :</label><br>
-                            <input class="ms-5" type="radio" value="1" id="civility1" name="civility">Mr
-                            <label class="form-label" for="civility2"></label><br>
-                            <input class="ms-5" type="radio" value="2" id="civility2" name="civility">Mme
-                            <p class="red">
-                                <?= $errors['civility'] ?? '' ?>
-                            </p>
-                        </div>
-                        <div>
                             <label class="form-label" for="lastnames">Nom *</label>
                             <input class="form-control" type="text" id="lastnames" name="lastname" pattern="<?= REGEX_NAME ?>" required>
                             <p class="red">
@@ -24,7 +15,7 @@
                         </div>
                         <div>
                             <label class="form-label" for="firstnames">Prénom *</label>
-                            <input class="form-control" type="text" id="firstnames" name="firstname" pattern="<?= REGEX_NAME ?>">
+                            <input class="form-control" type="text" id="firstnames" name="firstname" pattern="<?= REGEX_NAME ?>" require>
                             <p class="red">
                                 <?= $errors['firstname'] ?? '' ?>
                             </p>
