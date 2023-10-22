@@ -56,14 +56,13 @@ class Galleries
         return $result;
     }
 
-public static function get_all(): array
-{
-    $pdo = connect();
-    $sql = 'SELECT * FROM `nadia`.`galleries`
-    ORDER BY `image`, `name_img` ASC;';
-    $sth = $pdo->query($sql);
-    $result = $sth->fetchAll();
-    return $result;
-
-}
+    public static function get_all(): array
+    {
+        $pdo = connect();
+        $sql = 'SELECT * FROM `nadia`.`galleries`
+        ORDER BY `image`, `name_img` ASC;';
+        $sth = $pdo->query($sql);
+        $result = $sth->fetchAll();
+        return $result;
+    }
 }
