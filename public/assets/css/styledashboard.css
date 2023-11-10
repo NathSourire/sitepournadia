@@ -18,7 +18,9 @@ body {
     color: #E9D8A6;
     font-size: 22px;
 }
-
+.red{
+    color: red;
+}
 
 @font-face {
     font-family: Gantari !important;

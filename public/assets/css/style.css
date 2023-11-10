@@ -39,7 +39,9 @@ body {
     height: 300px;
     width: 300px;
 }
-
+.red{
+    color: red;
+}
 
 @font-face {
     font-family: Gantari;
