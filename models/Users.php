@@ -7,10 +7,10 @@ class Users
     private int $id_user;
     private string $lastname;
     private string $firstname;
-    private DateTime $date_of_birthday;
-    private int $zipcode;
+    private string $date_of_birthday;
+    private string $zipcode;
     private string $city;
-    private int $phone;
+    private string $phone;
     private string $email;
     private string $password;
     private string $message;
@@ -43,20 +43,20 @@ class Users
         $this->firstname = $firstname;
     }
 
-    public function get_date_of_birthday(): DateTime
+    public function get_date_of_birthday(): string
     {
         return $this->date_of_birthday;
     }
-    public function set_date_of_birthday(DateTime $date_of_birthday)
+    public function set_date_of_birthday(string $date_of_birthday)
     {
         $this->date_of_birthday = $date_of_birthday;
     }
 
-    public function get_zipcode(): int
+    public function get_zipcode(): string
     {
         return $this->zipcode;
     }
-    public function set_zipcode(int $zipcode)
+    public function set_zipcode(string $zipcode)
     {
         $this->zipcode = $zipcode;
     }
@@ -70,11 +70,11 @@ class Users
         $this->city = $city;
     }
 
-    public function get_phone(): int
+    public function get_phone(): string
     {
         return $this->phone;
     }
-    public function set_phone(int $phone)
+    public function set_phone(string $phone)
     {
         $this->phone = $phone;
     }
@@ -139,9 +139,9 @@ class Users
         $sth->bindValue(':firstname', $this->get_firstname(), PDO::PARAM_STR);
         $sth->bindValue(':email', $this->get_email(), PDO::PARAM_STR);
         $sth->bindValue(':date_of_birthday', $this->get_date_of_birthday(), PDO::PARAM_STR);
-        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_STR);
+        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_INT);
         $sth->bindValue(':city', $this->get_city(), PDO::PARAM_STR);
-        $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_STR);
+        $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_INT);
         $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
         $sth->bindValue(':message', $this->get_message(), PDO::PARAM_STR);
 
@@ -191,20 +191,20 @@ class Users
     {
         $pdo = connect();
         $sql = 'UPDATE `users` 
-        SET `lastname` = :lastname , `firstname` = :firstname , `email` = :email , `date_of_birthday` = :date_of_birthday , `phone` = :phone , `city` = :city , `zipcode` = :zipcode , `id_user` = :id_user, `role_management` = :role_management
-            WHERE `id_user` = :id_user ;';
+        SET `lastname` = :lastname , `firstname` = :firstname , `email` = :email , `date_of_birthday` = :date_of_birthday ,
+        `phone` = :phone , `city` = :city , `zipcode` = :zipcode , `password` = :password, `message` = :message, `id_user` = :id_user            
+        WHERE `id_user` = :id_user ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':lastname', $this->get_lastname(), PDO::PARAM_STR);
         $sth->bindValue(':firstname', $this->get_firstname(), PDO::PARAM_STR);
         $sth->bindValue(':email', $this->get_email(), PDO::PARAM_STR);
         $sth->bindValue(':date_of_birthday', $this->get_date_of_birthday(), PDO::PARAM_STR);
-        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_STR);
+        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_INT);
         $sth->bindValue(':city', $this->get_city(), PDO::PARAM_STR);
-        $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_STR);
+        $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_INT);
         $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
         $sth->bindValue(':message', $this->get_message(), PDO::PARAM_STR);
         $sth->bindValue(':id_user', $this->get_id_user(), PDO::PARAM_INT);
-        $sth->bindValue(':role_management', $this->get_role_management(), PDO::PARAM_INT);
         $sth->execute();
         return (bool) $sth->rowCount();
     }

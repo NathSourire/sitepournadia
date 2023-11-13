@@ -8,11 +8,11 @@ try {
 
     $dateNow = date('Y-m-d');
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
-    $users = Users::get_all();
+    $userObj = Users::get($id_user);
     $errors = [];
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-        $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_NUMBER_INT);
+        $role_management = filter_input(INPUT_POST, 'role_management', FILTER_SANITIZE_NUMBER_INT);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_SPECIAL_CHARS);
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -21,6 +21,7 @@ try {
         $zipcode = filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_NUMBER_INT);
         $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_SPECIAL_CHARS);
         $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+        $password0 = filter_input(INPUT_POST, 'password0', FILTER_DEFAULT);
 
         if (empty($errors)) {
             $newUser = new Users();
@@ -32,11 +33,16 @@ try {
             $newUser->set_phone($phone);
             $newUser->set_email($email);
             $newUser->set_message($message);
-            $newUser->set_password($password);
-            $saved = $newUser->insert();
+            $newUser->set_password($password0);
+            $newUser->set_id_user($id_user);
+            $newUser->set_role_management($role_management);
+            $saved = $newUser->update();
+            if ($saved == true) {
+                header('location: /controllers/dashboard/dashboard_users_ctrl.php');
+                die;
+            }
         }
     }
-
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
@@ -52,5 +58,5 @@ try {
 
 
 include __DIR__ . '/../../views/templates/header.php';
-include __DIR__ . '/../../views/dashboard/dashboard_users.php';
+include __DIR__ . '/../../views/dashboard/dashboard_change_user.php';
 include __DIR__ . '/../../views/templates/footer.php';

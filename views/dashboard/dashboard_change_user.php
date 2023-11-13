@@ -7,7 +7,7 @@
                     <div>
                         <label class="form-label" for="lastname">Nom *</label>
                         <input class="form-control form-control-lg " type="text" id="lastname" name="lastname" autocomplete="family-name" pattern="<?= REGEX_NAME ?>" 
-                        value="<?= isset($userObj->lastname) ? htmlspecialchars($userObj->lastname) : '' ?>" required>
+                        value="<?= isset($userObj->lastname) ? htmlspecialchars($userObj->lastname) : '' ?>">
                         <p class="red">
                             <?= $errors['lastname'] ?? '' ?>
                         </p>
@@ -15,7 +15,7 @@
                     <div>
                         <label class="form-label" for="firstnames">Prénom *</label>
                         <input class="form-control form-control-lg " type="text" id="firstnames" name="firstname" autocomplete="given-name" pattern="<?= REGEX_NAME ?>" 
-                        value="<?= isset($userObj->firstname) ? htmlspecialchars($userObj->firstname) : '' ?>"  require>
+                        value="<?= isset($userObj->firstname) ? htmlspecialchars($userObj->firstname) : '' ?>" >
                         <p class="red">
                             <?= $errors['firstname'] ?? '' ?>
                         </p>
@@ -48,7 +48,7 @@
                     <div>
                         <label class="form-label" for="phone">Téléphone *</label>
                         <input class="form-control form-control-lg " type="text" id="phone" name="phone" pattern="<?= REGEX_TEL ?>" 
-                        value="<?= isset($userObj->phone) ? htmlspecialchars($userObj->phone) : '' ?>"  required>
+                        value="<?= isset($userObj->phone) ? htmlspecialchars($userObj->phone) : '' ?>" >
                         <p class="red">
                             <?= $errors['phone'] ?? '' ?>
                         </p>
@@ -56,22 +56,24 @@
                     <div>
                         <label class="form-label" for="email">E-mail *</label>
                         <input class="form-control form-control-lg " type="email" id="email" name="email" autocomplete="email" 
-                        value="<?= isset($userObj->email) ? htmlspecialchars($userObj->email) : '' ?>" required>
+                        value="<?= isset($userObj->email) ? htmlspecialchars($userObj->email) : '' ?>">
                         <p class="red">
                             <?= $errors['email'] ?? '' ?>
                         </p>
                     </div>
-                    <div>
-                        <label class="form-label" for="passWord1">Mot de passe *</label>
-                        <input class="form-control form-control-lg " id="passWord1" type="password" name="password1" pattern="<?= REGEX_PASSWORD ?>" value="Bablz1985*" required><br>
+                    <label class="form-label" for="passWord0">Mot de passe *</label>
+                        <input class="form-control form-control-lg " id="passWord0" type="password" name="password0" pattern="<?= REGEX_PASSWORD ?>" 
+                        value="<?= $userObj->password ?>"><br>
                         <p class="red">
-                            <?= $errors['password1'] ?? '' ?>
+                            <?= $errors['password0'] ?? '' ?>
                         </p>
-                        <label class="form-label" for="passWord2">Vérification du mot de pass *</label>
-                        <input class="form-control form-control-lg  my-3" id="passWord2" type="password" name="password2" pattern="<?= REGEX_PASSWORD ?>" value="Bablz1985*" required>
-                        <p>Le mot de passe doit contenir au moins 8 caractères, une lettre en majuscule, une lettre en minuscule, un chiffre et un caractère spécial.<br>
-                            Les deux doivent être identique.</p>
-                        <p class="red" id="passwordMessage"></p>
+                    <div>
+                        <label class="form-label" for="role_management">role </label>
+                        <input class="form-control form-control-lg " type="text" id="role_management" name="role_management" autocomplete="family-name" 
+                        value="<?= isset($userObj->role_management) ? htmlspecialchars($userObj->role_management) : '' ?>">
+                        <p class="red">
+                            <?= $errors['role_management'] ?? '' ?>
+                        </p>
                     </div>
                     <div>
                         <label class="form-label" for="message">Votre message</label> <br>

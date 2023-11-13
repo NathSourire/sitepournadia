@@ -1,18 +1,19 @@
 <?php
 require_once __DIR__  . '/../models/Users.php';
-require_once __DIR__ . '/../config/constant.php';
-require_once __DIR__ . '/../config/regex.php';
+require_once __DIR__ . '/../helpers/init.php';
+
 
 
 try {
 
     $dateNow = date('Y-m-d');
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
-    $userobj = Users::get($id_user);
-    $users = Users::get_all();
+    $userObj = Users::get($id_user);
     $errors = [];
 
+
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+        // $role_management = filter_input(INPUT_POST, 'role_management', FILTER_SANITIZE_NUMBER_INT);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         if (empty($email)) {
             $errors['email'] = 'Veuillez entrer un email';
@@ -94,13 +95,49 @@ try {
             }
         }
 
+        if (empty($errors)) {
+            $newUser = new Users();
+            $newUser->set_lastname($lastname);
+            $newUser->set_firstname($firstname);
+            $newUser->set_date_of_birthday($dateOfBirthday);
+            $newUser->set_zipcode($zipcode);
+            $newUser->set_city($city);
+            $newUser->set_phone($phone);
+            $newUser->set_email($email);
+            $newUser->set_message($message);
+            $newUser->set_password($password);
+            $isUserSaved = $newUser->insert();
+
+            if($isUserSaved){
+                //envoi de mail
+                $payload = (object) ['id_clients' => $id_clients];
+
+        }
 
 
 
+
+        if (empty($errors)) {
+            $newUser = new Users();
+            $newUser->set_lastname($lastname);
+            $newUser->set_firstname($firstname);
+            $newUser->set_date_of_birthday($dateOfBirthday);
+            $newUser->set_email($email);
+            $newUser->set_phone($phone);
+            $newUser->set_zipcode($zipcode);
+            $newUser->set_city($city);
+            $newUser->set_message($message);
+            $newUser->set_password($password);
+            $newUser->set_id_user($id_user);
+            $saved = $newUser->update();
+        }
     }
+
+
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
+    var_dump($th);
 
 
     include __DIR__ . '/../views/templates/header.php';

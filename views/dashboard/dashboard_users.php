@@ -1,6 +1,5 @@
-<div class="container">
-    <div class="row">
-        <h3>Les images</h3>
+    <div class="">
+        <h3>Les Utilisateurs</h3>
         <table class="table">
             <thead>
                 <th>Id user</th>
@@ -11,6 +10,7 @@
                 <th>Ville</th>
                 <th>Téléphone</th>
                 <th>Email</th>
+                <th>Mot de pass</th>
                 <th>Message</th>
                 <th>Rôle</th>
                 <th>Modifier</th>
@@ -19,21 +19,29 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($images as $image) {
+                foreach ($users as $user) {
                 ?>
                     <tr>
-                        <td><?= $image->name_img ?></td>
-                        <td><?= $image->image ?></td>
-                        <td><?= $image->archived_at ?></td>
-                        <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?id_galleries=<?= $image->id_galleries ?>">
+                        <td><?= $user->id_user ?></td>
+                        <td><?= $user->lastname ?></td>
+                        <td><?= $user->firstname ?></td>
+                        <td><?= $user->date_of_birthday ?></td>
+                        <td><?= $user->zipcode ?></td>
+                        <td><?= $user->city ?></td>
+                        <td><?= $user->phone ?></td>
+                        <td><?= $user->email ?></td>
+                        <td><?= $user->password ?></td>
+                        <td><?= $user->message ?></td>
+                        <td><?= $user->role_management ?></td>
+                        <td><a href="/controllers/dashboard/dashboard_change_user-ctrl.php?id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=archive&id_galleries=<?= $image->id_galleries ?>">
+                        <td><a href="/controllers/dashboard/dashboard_user_ctrl.php?action=archive&id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=restor&id_galleries=<?= $image->id_galleries ?>">
+                        <td><a href="/controllers/dashboard/dashboard_user_ctrl.php?action=restor&id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btndelet.png" alt="poubelle">
                             </a>
                         </td>
@@ -42,4 +50,3 @@
             </tbody>
         </table>
     </div>
-</div>

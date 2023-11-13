@@ -8,14 +8,14 @@ try {
 
     $errors = [];
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-        $email1 = filter_input(INPUT_POST, 'email1', FILTER_SANITIZE_EMAIL);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         if (empty($email)) {
-            $errors['email1'] = 'Veuillez entrer un email';
+            $errors['email'] = 'Veuillez entrer un email';
         }
         // récuperation du mot de passe nettoyage et validation
-        $password3 = filter_input(INPUT_POST, 'password3', FILTER_DEFAULT);
-        if (empty($password3)) {
-            $errors['password3'] = 'Veuillez entrer un mot de passe';
+        $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
+        if (empty($password)) {
+            $errors['password'] = 'Veuillez entrer un mot de passe';
         }
     }
 } catch (\Throwable $th) {
