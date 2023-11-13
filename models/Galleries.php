@@ -6,9 +6,9 @@ class Galleries
 
     private int $id_galleries;
     private string $image;
-    private ?DateTime $archived_at;
     private int $id_product;
     private string $name_img;
+    private ?DateTime $archived_at;
 
     public function get_id_galleries(): int
     {
@@ -28,15 +28,6 @@ class Galleries
         $this->image = $image;
     }
 
-    public function get_archived_at(): DateTime
-    {
-        return $this->archived_at;
-    }
-    public function set_archived_at(string $archived_at)
-    {
-        $this->archived_at = new DateTime($archived_at);
-    }
-
     public function get_id_product(): int
     {
         return $this->id_product;
@@ -53,6 +44,15 @@ class Galleries
     public function set_name_img(string $name_img)
     {
         $this->name_img = $name_img;
+    }
+
+    public function get_archived_at(): DateTime
+    {
+        return $this->archived_at;
+    }
+    public function set_archived_at(string $archived_at)
+    {
+        $this->archived_at = new DateTime($archived_at);
     }
 
     // fonction qui permet de recuperer une catégorie précise
@@ -131,8 +131,7 @@ class Galleries
     public function update(): bool
     {
         $pdo = connect();
-        $sql = 'UPDATE `galleries` SET `name_img` = :name_img, `image` = :image, `archived_at` = :archived_at,
-            `id_galleries` = :id_galleries, `picture` = :picture  
+        $sql = 'UPDATE `galleries` SET `name_img` = :name_img, `image` = :image, `id_galleries` = :id_galleries
             WHERE `id_galleries` = :id_galleries ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_img', $this->get_name_img(), PDO::PARAM_STR);

@@ -5,10 +5,21 @@ require_once __DIR__ . '/../../models/Galleries.php';
 
 try {
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
-    $archive = filter_input(INPUT_GET, 'archive', FILTER_SANITIZE_NUMBER_INT);
     $id_galleries = intval(filter_input(INPUT_GET, 'id_galleries', FILTER_SANITIZE_NUMBER_INT));
     $images = Galleries::get_all_archived();
     $imageobj = Galleries::get($id_galleries);
+
+        // archive 
+        switch ($action) {
+            case 'archive':
+                $archived = (int) Galleries::archived($id_galleries);
+                header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?archive=' . $archived);
+                die;
+            case 'restor':
+                $restor = (int) Galleries::restored($id_galleries);
+                header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?restor=' . $restored);
+                die;
+        }
 
     $errors = [];
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
@@ -45,17 +56,6 @@ try {
             $errors['picture'] = $th->getMessage();
         }
 
-        // archive 
-        switch ($action) {
-            case 'archive':
-                $archived = (int) Galleries::archived($id_galleries);
-                header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?archive=' . $archived);
-                die;
-            case 'restor':
-                $restor = (int) Galleries::restored($id_galleries);
-                header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?restor=' . $restored);
-                die;
-        }
 
         if (empty($errors)) {
             $newImage = new Galleries();
@@ -72,7 +72,6 @@ try {
         }
     }
 } catch (\Throwable $th) {
-
     $errors = $th->getMessage();
 
 
