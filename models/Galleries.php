@@ -58,7 +58,7 @@ class Galleries
     // fonction qui permet de recuperer une catégorie précise
     public static function get(int $id_galleries): object|bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`galleries` 
         WHERE `id_galleries` = :id_galleries;';
         $sth = $pdo->prepare($sql);
@@ -70,7 +70,7 @@ class Galleries
 
     public function insert()
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'INSERT INTO `galleries` ( `name_img`, `image` )  VALUES ( :name_img, :image ) ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_img', $this->get_name_img(), PDO::PARAM_STR);
@@ -81,7 +81,7 @@ class Galleries
 
     public static function get_all(): array
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`galleries`
         WHERE `galleries`.`archived_at` IS NULL
         ORDER BY `name_img` ASC, `image` ASC;';
@@ -92,7 +92,7 @@ class Galleries
 
     public static function get_all_archived(): array
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`galleries`
         ORDER BY `name_img` ASC , `image` ASC;';
         $sth = $pdo->query($sql);
@@ -103,7 +103,7 @@ class Galleries
     //fonction pour archiver une image et lui attribué une date
     public static function archived(int $id_galleries): bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'UPDATE `galleries` SET `archived_at`= NOW() WHERE `id_galleries` = :id_galleries ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
@@ -119,7 +119,7 @@ class Galleries
     //fonction pour retirer de l'archive une image et lui attribué une date
     public static function restored(int $id_galleries): bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'UPDATE `galleries` SET `archived_at`= NULL WHERE `id_galleries` = :id_galleries ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
@@ -130,7 +130,7 @@ class Galleries
     //fonction pour modifier
     public function update(): bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'UPDATE `galleries` SET `name_img` = :name_img, `image` = :image, `id_galleries` = :id_galleries
             WHERE `id_galleries` = :id_galleries ;';
         $sth = $pdo->prepare($sql);

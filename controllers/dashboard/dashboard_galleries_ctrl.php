@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/regex.php';
-require_once __DIR__ . '/../../config/constant.php';
+require_once __DIR__ . '/../../helpers/init.php';
 require_once __DIR__ . '/../../models/Galleries.php';
 
 try {
@@ -9,17 +8,17 @@ try {
     $images = Galleries::get_all_archived();
     $imageobj = Galleries::get($id_galleries);
 
-        // archive 
-        switch ($action) {
-            case 'archive':
-                $archived = (int) Galleries::archived($id_galleries);
-                header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?archive=' . $archived);
-                die;
-            case 'restor':
-                $restor = (int) Galleries::restored($id_galleries);
-                header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?restor=' . $restored);
-                die;
-        }
+    // archive 
+    switch ($action) {
+        case 'archive':
+            $archived = (int) Galleries::archived($id_galleries);
+            header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?archive=' . $archived);
+            die;
+        case 'restor':
+            $restor = (int) Galleries::restored($id_galleries);
+            header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?restor=' . $restored);
+            die;
+    }
 
     $errors = [];
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {

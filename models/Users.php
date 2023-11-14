@@ -119,7 +119,7 @@ class Users
     // fonction qui permet de recuperer une catégorie précise
     public static function get(int $id_user): object|bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`users` 
         WHERE `id_user` = :id_user;';
         $sth = $pdo->prepare($sql);
@@ -131,7 +131,7 @@ class Users
 
     public function insert()
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'INSERT INTO `users` ( `lastname`, `firstname`, `email`, `date_of_birthday`, `phone`, `city`, `zipcode`, `password`, `message` )  
         VALUES ( :lastname, :firstname, :email, :date_of_birthday, :phone, :city, :zipcode, :password, :message  ) ;';
         $sth = $pdo->prepare($sql);
@@ -144,14 +144,17 @@ class Users
         $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_INT);
         $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
         $sth->bindValue(':message', $this->get_message(), PDO::PARAM_STR);
-
-        $result = $sth->execute();
-        return $result;
+        $sth->execute();
+        if ($sth->rowCount() <= 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public static function get_all(): array
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`users`
         ORDER BY `lastname` ASC , `firstname` ASC;';
         $sth = $pdo->query($sql);
@@ -189,10 +192,10 @@ class Users
     //fonction pour modifier
     public function update(): bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'UPDATE `users` 
         SET `lastname` = :lastname , `firstname` = :firstname , `email` = :email , `date_of_birthday` = :date_of_birthday ,
-        `phone` = :phone , `city` = :city , `zipcode` = :zipcode , `password` = :password, `message` = :message, `id_user` = :id_user            
+        `phone` = :phone , `city` = :city , `zipcode` = :zipcode , `password` = :password, `message` = :message, `id_user` = :id_user        
         WHERE `id_user` = :id_user ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':lastname', $this->get_lastname(), PDO::PARAM_STR);
@@ -207,5 +210,39 @@ class Users
         $sth->bindValue(':id_user', $this->get_id_user(), PDO::PARAM_INT);
         $sth->execute();
         return (bool) $sth->rowCount();
+    }
+
+    public static function getByEmail(string $email): object|false
+    {
+        $pdo = Database::connect();
+        $sql = 'SELECT * from `users` WHERE `email` = :email';
+        // Si marqueur nominatif, il faut préparer la requête
+        $sth = $pdo->prepare($sql);
+        // Affectation de la valeur correspondant au marqueur nominatif concerné
+        $sth->bindValue(':email', $email);
+        // Exécution de la requête
+        $sth->execute();
+        $data = $sth->fetch();
+        // On teste si data est vide.
+        if (!$data) {
+            return false;
+        } else {
+            // Retourne la donnée complète sous forme d'objet (tout s'est bien passé)
+            return $data;
+        }
+    }
+
+    public static function confirmSignUp(int $id_user): bool
+    {
+        $pdo = Database::connect();
+        $sql = 'UPDATE `users` SET `confirmed_at` = NOW() WHERE `users`.`id_user` = :id_user;';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+        $sth->execute();
+        if ($sth->rowCount() <= 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

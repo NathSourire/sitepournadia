@@ -57,7 +57,7 @@ class Product
     // fonction qui permet de recuperer une catégorie précise
     public static function get(int $id_product): object|bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`product` 
             INNER JOIN `galleries` ON `galleries`.`id_galleries` = `product`.`id_galleries`
             WHERE `id_product` = :id_product;';
@@ -70,7 +70,7 @@ class Product
 
     public function insert()
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'INSERT INTO `product` ( `name_product`, `price`, `description` )  VALUES ( :name_product, :price, :description) ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_product', $this->get_name_product(), PDO::PARAM_STR);
@@ -82,7 +82,7 @@ class Product
 
     public static function get_all(): array
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`product`
             INNER JOIN `galleries` ON `galleries`.`id_galleries` = `product`.`id_galleries`
             ORDER BY `name_product` ASC;';
@@ -95,7 +95,7 @@ class Product
     //fonction pour modifier
     public function update(): bool
     {
-        $pdo = connect();
+        $pdo = Database::connect();
         $sql = 'UPDATE `product` SET `name_product` = :name_product, `price` = :price, `description`= :description, `id_product` = :id_product ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_product', $this->get_name_product(), PDO::PARAM_STR);

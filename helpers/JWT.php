@@ -47,11 +47,6 @@ class JWT{
         } else {
             return $payload;
         }
-        
-        
-        
-        
-        
 
         // $header = json_decode();
 

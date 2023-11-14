@@ -5,7 +5,7 @@
                 <th>Id user</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>date anniversaire</th>
+                <th>Date anniversaire</th>
                 <th>Code postal</th>
                 <th>Ville</th>
                 <th>Téléphone</th>
@@ -13,6 +13,7 @@
                 <th>Mot de pass</th>
                 <th>Message</th>
                 <th>Rôle</th>
+                <th>Date de confirmation</th>
                 <th>Modifier</th>
                 <th>Archiver</th>
                 <th>Restorer</th>
@@ -33,6 +34,7 @@
                         <td><?= $user->password ?></td>
                         <td><?= $user->message ?></td>
                         <td><?= $user->role_management ?></td>
+                        <td><?= $user->confirmed_at ?></td>
                         <td><a href="/controllers/dashboard/dashboard_change_user-ctrl.php?id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
