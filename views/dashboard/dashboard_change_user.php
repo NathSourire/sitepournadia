@@ -61,20 +61,6 @@
                             <?= $errors['email'] ?? '' ?>
                         </p>
                     </div>
-                    <label class="form-label" for="passWord0">Mot de passe *</label>
-                        <input class="form-control form-control-lg " id="passWord0" type="password" name="password0" pattern="<?= REGEX_PASSWORD ?>" 
-                        value="<?= $userObj->password ?>"><br>
-                        <p class="red">
-                            <?= $errors['password0'] ?? '' ?>
-                        </p>
-                    <div>
-                        <label class="form-label" for="role_management">role </label>
-                        <input class="form-control form-control-lg " type="text" id="role_management" name="role_management" autocomplete="family-name" 
-                        value="<?= isset($userObj->role_management) ? htmlspecialchars($userObj->role_management) : '' ?>">
-                        <p class="red">
-                            <?= $errors['role_management'] ?? '' ?>
-                        </p>
-                    </div>
                     <div>
                         <label class="form-label" for="message">Votre message</label> <br>
                         <textarea class="form-control form-control-lg  my-3" name="message" id="message" cols="50" rows="10" maxlength="500" placeholder="Message" 

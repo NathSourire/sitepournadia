@@ -106,15 +106,6 @@ class Users
         $this->message = $message;
     }
 
-    public function get_role_management(): int
-    {
-        return $this->role_management;
-    }
-    public function set_role_management(int $role_management)
-    {
-        $this->role_management = $role_management;
-    }
-
 
     // fonction qui permet de recuperer une catégorie précise
     public static function get(int $id_user): object|bool
@@ -139,7 +130,7 @@ class Users
         $sth->bindValue(':firstname', $this->get_firstname(), PDO::PARAM_STR);
         $sth->bindValue(':email', $this->get_email(), PDO::PARAM_STR);
         $sth->bindValue(':date_of_birthday', $this->get_date_of_birthday(), PDO::PARAM_STR);
-        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_INT);
+        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_STR);
         $sth->bindValue(':city', $this->get_city(), PDO::PARAM_STR);
         $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_INT);
         $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
@@ -194,18 +185,18 @@ class Users
     {
         $pdo = Database::connect();
         $sql = 'UPDATE `users` 
-        SET `lastname` = :lastname , `firstname` = :firstname , `email` = :email , `date_of_birthday` = :date_of_birthday ,
-        `phone` = :phone , `city` = :city , `zipcode` = :zipcode , `password` = :password, `message` = :message, `id_user` = :id_user        
+        SET `lastname` = :lastname , `firstname` = :firstname , `email` = :email , `date_of_birthday` = :date_of_birthday , 
+        `phone` = :phone , `city` = :city , `zipcode` = :zipcode , `message` = :message, `id_user` = :id_user        
         WHERE `id_user` = :id_user ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':lastname', $this->get_lastname(), PDO::PARAM_STR);
         $sth->bindValue(':firstname', $this->get_firstname(), PDO::PARAM_STR);
         $sth->bindValue(':email', $this->get_email(), PDO::PARAM_STR);
         $sth->bindValue(':date_of_birthday', $this->get_date_of_birthday(), PDO::PARAM_STR);
-        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_INT);
+        $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_STR);
         $sth->bindValue(':city', $this->get_city(), PDO::PARAM_STR);
         $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_INT);
-        $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
+        // $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
         $sth->bindValue(':message', $this->get_message(), PDO::PARAM_STR);
         $sth->bindValue(':id_user', $this->get_id_user(), PDO::PARAM_INT);
         $sth->execute();

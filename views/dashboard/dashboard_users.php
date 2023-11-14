@@ -10,9 +10,8 @@
                 <th>Ville</th>
                 <th>Téléphone</th>
                 <th>Email</th>
-                <th>Mot de pass</th>
+                <!-- <th>Mot de pass</th> -->
                 <th>Message</th>
-                <th>Rôle</th>
                 <th>Date de confirmation</th>
                 <th>Modifier</th>
                 <th>Archiver</th>
@@ -31,9 +30,8 @@
                         <td><?= $user->city ?></td>
                         <td><?= $user->phone ?></td>
                         <td><?= $user->email ?></td>
-                        <td><?= $user->password ?></td>
+                        <!-- <td><?= $user->password ?></td> -->
                         <td><?= $user->message ?></td>
-                        <td><?= $user->role_management ?></td>
                         <td><?= $user->confirmed_at ?></td>
                         <td><a href="/controllers/dashboard/dashboard_change_user-ctrl.php?id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">

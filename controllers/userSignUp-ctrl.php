@@ -82,7 +82,7 @@ try {
         }
 
         //récuperation et nettoyage du numero de telephone
-        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_SPECIAL_CHARS);
         if (empty($phone)) {
             $errors['phone'] = 'Veuillez entrer un numéro de téléphone';
         } else {
@@ -127,21 +127,6 @@ try {
                 throw new Exception("Erreur lors de votre inscription:");
             }
         }
-
-        // if (empty($errors)) {
-        //     $newUser = new Users();
-        //     $newUser->set_lastname($lastname);
-        //     $newUser->set_firstname($firstname);
-        //     $newUser->set_date_of_birthday($dateOfBirthday);
-        //     $newUser->set_email($email);
-        //     $newUser->set_phone($phone);
-        //     $newUser->set_zipcode($zipcode);
-        //     $newUser->set_city($city);
-        //     $newUser->set_message($message);
-        //     $newUser->set_password($password);
-        //     $newUser->set_id_user($id_user);
-        //     $saved = $newUser->update();
-        // }
         
     }
 } catch (\Throwable $th) {
