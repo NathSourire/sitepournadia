@@ -37,7 +37,9 @@
                 ?>
                     <tr>
                         <td><?= $image->name_img ?></td>
-                        <td><?= $image->image ?></td>
+                        <?php if (isset($image->image)) { ?>
+                        <td><a href="/public/uploads/image/<?= $image->image?>" target="_blank" ><?= $image->image ?></a></td>
+                        <?php }?>
                         <td><?= $image->archived_at ?></td>
                         <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?id_galleries=<?= $image->id_galleries ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
