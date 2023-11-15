@@ -106,7 +106,10 @@ try {
             $newUser->set_password($password);
             $isUserSaved = $newUser->insert();
             $id_user = $pdo->lastInsertId();
-
+            if ($isUserSaved == true) {
+                header('location: /controllers/userSignIn-ctrl.php');
+                die;
+            }
 
             if ($isUserSaved) {
                 //envoi de mail
@@ -132,7 +135,6 @@ try {
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
-    var_dump($th);
 
 
     include __DIR__ . '/../views/templates/header.php';

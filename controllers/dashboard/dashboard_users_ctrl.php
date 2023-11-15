@@ -40,7 +40,6 @@ try {
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
-    var_dump($th);
 
 
     include __DIR__ . '/../../views/templates/header.php';

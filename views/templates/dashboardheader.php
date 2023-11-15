@@ -17,6 +17,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
@@ -27,6 +28,18 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnection</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li>
                 </ul>
+
+                <ul class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dashboard
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_galleries_ctrl.php">Galleries</a></li>
+                        <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
+                        <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
+                    </ul>
+                </ul> 
+
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>

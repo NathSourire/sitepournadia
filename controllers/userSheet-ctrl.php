@@ -6,6 +6,11 @@ require_once __DIR__ . '/../models/Users.php';
 
 try {
 
+    if (($_SESSION) == []) {
+        header('location: /controllers/userSignIn-ctrl.php');
+        die;
+    }
+
     $dateNow = date('Y-m-d');
     $id_user = $_SESSION['users']->id_user;
     $userObj = Users::get($id_user);
@@ -51,7 +56,6 @@ try {
                 die;
             }
         }
-
     }
 } catch (\Throwable $th) {
 

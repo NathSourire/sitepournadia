@@ -7,6 +7,14 @@ require_once __DIR__ . '/../models/Users.php';
 try {
     $errors = [];
 
+    if ($_SESSION['users']->role_management === 1) {
+        header('location: /controllers/dashboard/dashboard_home.php');
+        die;
+    } else ($_SESSION['users']->role_management === NULL) {
+        header('location: /controllers/home-ctrl.php');
+        die;
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         $datas = filter_input_array(INPUT_POST, [
@@ -37,6 +45,7 @@ try {
         }
     }
 
+    
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();

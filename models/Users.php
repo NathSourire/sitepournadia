@@ -14,7 +14,6 @@ class Users
     private string $email;
     private string $password;
     private string $message;
-    private int $role_management;
 
     public function get_id_user(): int
     {
