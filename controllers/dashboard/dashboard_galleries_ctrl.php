@@ -80,6 +80,6 @@ try {
     die;
 }
 
-include __DIR__ . '/../../views/templates/header.php';
+include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_galleries.php';
 include __DIR__ . '/../../views/templates/footer.php';

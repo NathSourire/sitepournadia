@@ -53,6 +53,6 @@ try {
 
 
 
-include __DIR__ . '/../../views/templates/header.php';
+include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_change_user.php';
 include __DIR__ . '/../../views/templates/footer.php';

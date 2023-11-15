@@ -7,13 +7,7 @@ require_once __DIR__ . '/../models/Users.php';
 try {
     $errors = [];
 
-    if ($_SESSION['users']->role_management === 1) {
-        header('location: /controllers/dashboard/dashboard_home.php');
-        die;
-    } else ($_SESSION['users']->role_management === NULL) {
-        header('location: /controllers/home-ctrl.php');
-        die;
-    }
+
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
@@ -38,17 +32,21 @@ try {
             }
             unset($users->password);
             $_SESSION['users'] = $users;
-            header('location: /');
-            die;
+            $_SESSION['users']->role_management === 1;
+            header('location: /controllers/dashboard/dashboard_home-ctrl.php');
+            die;    
         } catch (\Throwable $th) {
             $errors["email"] = $th->getMessage();
         }
+
+        
     }
 
     
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
+
 
 
     include __DIR__ . '/../views/templates/header.php';

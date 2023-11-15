@@ -23,9 +23,9 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/basket-ctrl.php">Panier</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connection</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnection</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li>
                 </ul>
 

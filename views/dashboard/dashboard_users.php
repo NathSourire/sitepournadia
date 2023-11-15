@@ -14,8 +14,9 @@
                 <th>Message</th>
                 <th>Date de confirmation</th>
                 <th>Modifier</th>
-                <th>Archiver</th>
-                <th>Restorer</th>
+                <!-- <th>Archiver</th>
+                <th>Restorer</th> -->
+                <th>Supprimer</th>
             </thead>
             <tbody>
                 <?php
@@ -37,11 +38,15 @@
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_user_ctrl.php?action=archive&id_user=<?= $user->id_user ?>">
+                        <!-- <td><a href="/controllers/dashboard/dashboard/dashboard_users_ctrl.php?action=archive&id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_user_ctrl.php?action=restor&id_user=<?= $user->id_user ?>">
+                        <td><a href="/controllers/dashboard/dashboard/dashboard_users_ctrl.php?action=restor&id_user=<?= $user->id_user ?>">
+                                <img src="/public/assets/img/btnarchived.png" alt="poubelle">
+                            </a>
+                        </td> -->
+                        <td><a href="/controllers/dashboard/dashboard_users_ctrl.php?action=delete&id_user=<?= $user->id_user ?>">
                                 <img src="/public/assets/img/btndelet.png" alt="poubelle">
                             </a>
                         </td>

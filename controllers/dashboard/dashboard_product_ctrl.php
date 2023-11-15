@@ -1,8 +1,7 @@
 <?php 
-require_once __DIR__ . '/../../config/regex.php';
-require_once __DIR__ . '/../../config/constant.php';
+require_once __DIR__ . '/../../helpers/init.php';
 require_once __DIR__ . '/../../models/Galleries.php';
-require_once __DIR__ . '/../models/Product.php';
+// require_once __DIR__ . '/../models/Product.php';
 
 try {
 
@@ -19,6 +18,6 @@ try {
     die;
 }
 
-include __DIR__ . '/../../views/templates/header.php';
+include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_product.php';
 include __DIR__ . '/../../views/templates/footer.php';

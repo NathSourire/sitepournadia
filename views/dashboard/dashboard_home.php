@@ -1,4 +1,4 @@
-                <ul class="nav-item dropdown">
+                <!-- <ul class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dashboard
                     </a>
@@ -7,6 +7,6 @@
                         <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
                         <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
                     </ul>
-                </ul> 
+                </ul>  -->
 
                 

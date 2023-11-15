@@ -235,4 +235,15 @@ class Users
             return true;
         }
     }
+
+    // fonction pour supprimer le vehicule
+    public static function delete(int $id_user): bool
+    {
+        $pdo = Database::connect();
+        $sql = 'DELETE FROM `users` WHERE `id_user` = :id_user ;';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+        $sth->execute();
+        return (bool) $sth->rowCount();
+    }
 }

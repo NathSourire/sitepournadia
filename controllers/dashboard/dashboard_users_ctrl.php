@@ -8,8 +8,12 @@ try {
 
     $dateNow = date('Y-m-d');
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
+    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+    // permet d'afficher sur la liste si bien supprimer
+    $delete = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_NUMBER_INT);
     $users = Users::get_all();
     $errors = [];
+
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_NUMBER_INT);
@@ -36,7 +40,22 @@ try {
             $saved = $newUser->insert();
         }
     }
-
+    switch ($action) {
+            // case 'archive':
+            //     $archived = (int) Vehicle::archived($id_vehicles);
+            //     header('location: /controllers/dashboard/vehicle/list_vehicle_ctrl.php?archive='.$archived);
+            //     die;
+            // case 'restor':
+            //     $restor = (int) Vehicle::restored($id_vehicles);
+            //     header('location: /controllers/dashboard/vehicle/list_vehicle_ctrl.php?restor='.$restored);
+            //     die; 
+        case 'delete':
+            $isDeleted = (int) Users::delete($id_user);
+            if ($isDeleted) {
+                header('location: /controllers/dashboard/dashboard_users_ctrl.php?delete=' . $isDeleted);
+                die;
+            }
+    }
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
@@ -50,6 +69,6 @@ try {
 
 
 
-include __DIR__ . '/../../views/templates/header.php';
+include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_users.php';
 include __DIR__ . '/../../views/templates/footer.php';
