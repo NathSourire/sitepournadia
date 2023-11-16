@@ -38,7 +38,7 @@
                         <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
                         <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
                     </ul>
-                </ul> 
+                </ul>
 
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,3 +47,9 @@
             </div>
         </div>
     </nav>
+
+    <div>
+        <?php
+        FlashMessage::display();
+        ?>
+    </div>

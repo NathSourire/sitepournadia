@@ -8,6 +8,8 @@ try {
     $images = Galleries::get_all_archived();
     $imageobj = Galleries::get($id_galleries);
 
+
+    
     // archive 
     switch ($action) {
         case 'archive':
@@ -74,7 +76,7 @@ try {
     $errors = $th->getMessage();
 
 
-    include __DIR__ . '/../../views/templates/header.php';
+    include __DIR__ . '/../../views/templates/dashboardheader.php';
     include __DIR__ . '/../../views/templates/error.php';
     include __DIR__ . '/../../views/templates/footer.php';
     die;

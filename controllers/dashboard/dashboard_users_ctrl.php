@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__  . '/../../models/Users.php';
-require_once __DIR__ . '/../../config/constant.php';
-require_once __DIR__ . '/../../config/regex.php';
+require_once __DIR__ . '/../../helpers/init.php';
+
 
 
 try {
@@ -52,16 +52,18 @@ try {
         case 'delete':
             $isDeleted = (int) Users::delete($id_user);
             if ($isDeleted) {
-                header('location: /controllers/dashboard/dashboard_users_ctrl.php?delete=' . $isDeleted);
-                die;
+                FlashMessage::set('La suppression s\'est bien déroulée!', SUCCESS); 
+            } else {
+                FlashMessage::set('La suppression s\'est mal passée!', ERROR); 
             }
     }
+    
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();
 
 
-    include __DIR__ . '/../../views/templates/header.php';
+    include __DIR__ . '/../../views/templates/dashboardheader.php.php';
     include __DIR__ . '/../../views/templates/error.php';
     include __DIR__ . '/../../views/templates/footer.php';
     die;

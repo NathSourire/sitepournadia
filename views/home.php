@@ -1,3 +1,8 @@
+<div>
+    <?php
+    FlashMessage::display();
+    ?>
+</div>
 <div class="imgBackground opacity-75 row p-5">
     <img src="/public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
     <p>je teste du texte sur mon image</p>

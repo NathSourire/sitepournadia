@@ -42,6 +42,10 @@ body {
 .red{
     color: red;
 }
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
 
 @font-face {
     font-family: Gantari;

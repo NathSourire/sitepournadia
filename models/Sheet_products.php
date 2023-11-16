@@ -6,6 +6,7 @@ class Sheet_products
 
     private int $id_sheet_product;
     private string $variety;
+    private int $id_user;
 
     public function get_id_sheet_product(): int
     {
@@ -26,8 +27,14 @@ class Sheet_products
         $this->variety = $variety;
     }
 
-
-    
+    public function get_id_user(): int
+    {
+        return $this->id_user;
+    }
+    public function set_id_user(int $id_user)
+    {
+        $this->id_user = $id_user;
+    }
 
 
 }

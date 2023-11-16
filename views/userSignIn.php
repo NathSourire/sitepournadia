@@ -1,4 +1,9 @@
 <div>
+    <?php
+    FlashMessage::display();
+    ?>
+</div>
+<div>
     <h2>connection</h2>
     <form id="form" enctype="multipart/form-data" method="post">
         <div class="container conect">

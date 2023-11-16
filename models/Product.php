@@ -9,6 +9,7 @@ class Product
     private int $price;
     private string $description;
     private int $id_galleries;
+    private ?DateTime $archived_product_at;
 
     public function get_id_product(): int
     {
@@ -45,6 +46,7 @@ class Product
     {
         $this->description = $description;
     }
+
     public function get_id_galleries(): int
     {
         return $this->id_galleries;
@@ -54,12 +56,22 @@ class Product
         $this->id_galleries = $id_galleries;
     }
 
+    public function get_archived_at(): DateTime
+    {
+        return $this->archived_product_at;
+    }
+    public function set_archived_at(string $archived_product_at)
+    {
+        $this->archived_product_at = new DateTime($archived_product_at);
+    }
+
     // fonction qui permet de recuperer une catégorie précise
     public static function get(int $id_product): object|bool
     {
         $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`product` 
-            INNER JOIN `galleries` ON `galleries`.`id_galleries` = `product`.`id_galleries`
+            JOIN `sheet_products` ON `product`.`id_product` = `sheet_products`.`id_sheet_product`
+            JOIN `galleries` ON `product`.`id_product` = `galleries`.`id_galleries`;
             WHERE `id_product` = :id_product;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
@@ -68,6 +80,7 @@ class Product
         return $result;
     }
 
+    // fonction pour l'incertion
     public function insert()
     {
         $pdo = Database::connect();
@@ -80,17 +93,18 @@ class Product
         return $result;
     }
 
+    // fonction pour tout afficher
     public static function get_all(): array
     {
         $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`product`
-            INNER JOIN `galleries` ON `galleries`.`id_galleries` = `product`.`id_galleries`
+            JOIN `sheet_products` ON `product`.`id_product` = `sheet_products`.`id_sheet_product`
+            JOIN `galleries` ON `product`.`id_product` = `galleries`.`id_galleries`;
             ORDER BY `name_product` ASC;';
         $sth = $pdo->query($sql);
         $result = $sth->fetchAll();
         return $result;
     }
-
 
     //fonction pour modifier
     public function update(): bool
@@ -105,4 +119,33 @@ class Product
         $sth->execute();
         return (bool) $sth->rowCount();
     }
+
+        //fonction pour archiver une image et lui attribué une date
+        public static function archived(int $id_product): bool
+        {
+            $pdo = Database::connect();
+            $sql = 'UPDATE `product` SET `archived_product_at`= NOW() WHERE `id_product` = :id_product ;';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
+            $sth->execute();
+            $result = $sth->fetch();
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    
+        //fonction pour retirer de l'archive une image et lui attribué une date
+        public static function restored(int $id_product): bool
+        {
+            $pdo = Database::connect();
+            $sql = 'UPDATE `product` SET `archived_product_at`= NULL WHERE `id_product` = :id_product ;';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
+            $sth->execute();
+            return (bool) $sth->rowCount();
+        }
+
+
 }

@@ -1,11 +1,12 @@
 <?php 
-require_once __DIR__ . '/../config/regex.php';
-require_once __DIR__ . '/../config/constant.php';
-require_once __DIR__ . '/../models/Galleries.php';
+require_once __DIR__ . '/../helpers/init.php';
 require_once __DIR__ . '/../models/Product.php';
 
 try {
-    $products = Product::get_all();
+    
+    $id_galleries = intval(filter_input(INPUT_GET, 'id_galleries', FILTER_SANITIZE_NUMBER_INT));
+    // $products = Product::get($id_product);
+    // $products = Product::get_all();
     $errors = [];
 
 
