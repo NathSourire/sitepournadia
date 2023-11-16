@@ -3,10 +3,12 @@ require_once __DIR__ . '/../../helpers/init.php';
 require_once __DIR__ . '/../../models/Product.php';
 
 try {
-    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+    
     $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
+    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
     $products = Product::get_all();
     $productobj = Product::get($id_product);
+    
     $errors = [];
 
     // archive 
@@ -21,42 +23,32 @@ try {
             die;
     }
 
-
-
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-        $nameimg = filter_input(INPUT_POST, 'nameimg', FILTER_SANITIZE_SPECIAL_CHARS);
-        if (empty($nameimg)) {
-            $errors['nameimg'] = 'Veuillez entrer un nom pour l\'image ';
-        } else {
-            $isOk = filter_var($nameimg, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/' . REGEX_NAME . '/']]);
-            if (!$isOk) {
-                $errors['nameimg'] = 'Veuillez entrer un nom d\'image correct';
-            }
+        $name_product = filter_input(INPUT_POST, 'name_product', FILTER_SANITIZE_SPECIAL_CHARS);
+        $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+
+
+        if (empty($errors)) {
+            $newProduct = new Product();
+            $newProduct->set_name_product($name_product);
+            $newProduct->set_price($price);
+            $newProduct->set_description($description);
+            $saved = $newProduct->insert();
         }
 
-
-
-        // if (empty($errors)) {
-        //     $newProduct = new Product();
-        //     $newProduct->set_name_product($name_product);
-        //     $newProduct->set_price($price);
-        //     $newProduct->set_description($description);
-        //     $newProduct->set_id_galleries($id_galleries);
-        //     $saved = $newProduct->insert();
-        // }
-        // if (empty($errors)) {
-        //     $newProduct = new Product();
-        //     $newProduct->set_name_product($name_product);
-        //     $newProduct->set_price($price);
-        //     $newProduct->set_description($description);
-        //     $newProduct->set_id_galleries($id_galleries);
-        //     $saved = $newProduct->update();
-        // }
-    
+        if (empty($errors)) {
+            $newProduct = new Product();
+            $newProduct->set_name_product($name_product);
+            $newProduct->set_price($price);
+            $newProduct->set_description($description);
+            $newProduct->set_id_product($id_product);
+            $saved = $newProduct->update();
+        }
     }
 } catch (\Throwable $th) {
     $errors = $th->getMessage();
-    dd($th);
+
 
 
     include __DIR__ . '/../../views/templates/dashboardheader.php';

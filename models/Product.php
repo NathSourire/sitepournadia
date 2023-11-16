@@ -70,9 +70,8 @@ class Product
     {
         $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`product` 
-            JOIN `sheet_products` ON `product`.`id_product` = `sheet_products`.`id_sheet_product`
-            JOIN `galleries` ON `product`.`id_product` = `galleries`.`id_galleries`;
-            WHERE `id_product` = :id_product;';
+            JOIN `sheet_products` ON `product`.`id_sheet_product` = `sheet_products`.`id_sheet_product`
+            WHERE `product`.`id_product` = :id_product;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
         $sth->execute();
@@ -98,8 +97,7 @@ class Product
     {
         $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`product`
-            JOIN `sheet_products` ON `product`.`id_product` = `sheet_products`.`id_sheet_product`
-            JOIN `galleries` ON `product`.`id_product` = `galleries`.`id_galleries`;
+            JOIN `sheet_products` ON `product`.`id_sheet_product` = `sheet_products`.`id_sheet_product`
             ORDER BY `name_product` ASC;';
         $sth = $pdo->query($sql);
         $result = $sth->fetchAll();

@@ -8,7 +8,6 @@ try {
     $images = Galleries::get_all_archived();
     $imageobj = Galleries::get($id_galleries);
 
-
     
     // archive 
     switch ($action) {

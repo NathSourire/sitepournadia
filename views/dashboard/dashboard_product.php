@@ -6,11 +6,12 @@
         <form class="row " id="productform" enctype="multipart/form-data" method="post" novalidate>
             <div class="offset-1 offset-md-1 col-10 col-md-10">
 
-                <div class="text-center fs-2" id="productname">
-                    <p value="<?= isset($productobj->name_img) ? htmlspecialchars($productobj->name_img) : '' ?>" ></p>
+                <div>
+                    <label class="form-label my-5 ms-3" for="name_product">Nom du produit</label>
+                    <input class="form-control form-control-lg ms-3" type="text" name="name_product" id="name_product" value="<?= isset($productobj->name_product) ? htmlspecialchars($productobj->name_product) : '' ?>" readonly>
                 </div>
                 <div class="imgtext my-5 row">
-                    <!-- <img class="col-10 col-md-5 ms-5" src="/public/uploads/image/<?= $productobj->image ?>" alt="<?= $productobj->name_img ?>"> -->
+                    <img class="col-10 col-md-5 ms-5" src="/public/uploads/image/<?= $productobj->image ?>" alt="<?= $productobj->name_img ?>">
                     <!-- value="<?= isset($productobj->name_img) ? htmlspecialchars($productobj->name_img) : '' ?>" -->
                     <textarea class="col-10 col-md-5 ms-5 my-3 " name="description" id="description" cols="50" rows="10" value="<?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?>"></textarea>
                     <label class="form-label" for="description"></label> <br>
@@ -19,13 +20,8 @@
                     <label class="form-label ms-3" for="price">Prix</label>
                     <input class="form-control form-control-lg ms-3" type="text" name="price" id="price" value="<?= isset($productobj->price) ? htmlspecialchars($productobj->price) : '' ?>" readonly>
                 </div>
-
-                <div>
-                    <label class="form-label ms-3 my-3 " for="quantity">Quantité</label>
-                    <input class="form-control form-control-lg ms-3" type="text" name="quantity" id="quantity">
-                </div>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-success my-3 ms-3" type="submit">Validation</button>
+                    <button class="btn btn-success my-5 ms-3" type="submit">Validation</button>
                 </div>
             </div>
         </form>
@@ -53,8 +49,8 @@
                     <tr>
                         <td><?= $product->name_product ?></td>
                         <?php if (isset($product->image)) { ?>
-                        <td><a href="/public/uploads/image/<?= $product->image?>" target="_blank" ><?= $product->image ?></a></td>
-                        <?php }?>
+                            <td><a href="/public/uploads/image/<?= $product->image ?>" target="_blank"><?= $product->image ?></a></td>
+                        <?php } ?>
                         <td><?= $product->price ?></td>
                         <td><?= $product->description ?></td>
                         <td><?= $product->archived_product_at ?></td>

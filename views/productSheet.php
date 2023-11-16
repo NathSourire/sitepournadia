@@ -1,8 +1,5 @@
 <div class="container">
     <div class="productsheet row">
-        <?php
-        foreach ($products as $product) {
-        ?>
             <div class="text-center fs-2" id="productname">
                 <p><?= $product->name_product ?></p>
             </div>
@@ -26,6 +23,5 @@
                     </div>
                 </div>
             </form>
-        <?php } ?>
     </div>
 </div>

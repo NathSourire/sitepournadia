@@ -25,7 +25,7 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li> -->
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

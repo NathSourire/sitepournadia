@@ -83,6 +83,7 @@ class Galleries
     {
         $pdo = Database::connect();
         $sql = 'SELECT * FROM `nadia`.`galleries`
+        JOIN `product` ON `product`.`id_product` = `galleries`.`id_product`
         WHERE `galleries`.`archived_at` IS NULL
         ORDER BY `name_img` ASC, `image` ASC;';
         $sth = $pdo->query($sql);
