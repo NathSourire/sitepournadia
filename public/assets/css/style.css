@@ -14,6 +14,7 @@ body {
 }
 
 .nav li a {
+    font-size: 18px;
     color: #001219;
 }
 
@@ -46,7 +47,10 @@ body {
     text-decoration: none;
     color: inherit;
 }
-
+.logonav{
+    height:100px;
+    width: 150px;
+}
 @font-face {
     font-family: Gantari;
     src: url(../font/Gantari-Regular.ttf);

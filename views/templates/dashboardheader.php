@@ -12,8 +12,10 @@
 
 <body class="container-fluid">
     <nav id="headNav" class="navbar sticky-top navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/controllers/accueil-ctrl.php">Logo</a>
+        <div class="container">
+            <a class="navbar-brand" href="/controllers/home-ctrl.php">
+                <img src="/public/assets/img/Logo.png" alt="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,10 +28,9 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li>
                 </ul>
 
-                <ul class="nav-item dropdown">
+                <!-- <ul class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dashboard
                     </a>
@@ -38,7 +39,7 @@
                         <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
                         <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
                     </ul>
-                </ul>
+                </ul> -->
 
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
