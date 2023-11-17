@@ -7,8 +7,6 @@ require_once __DIR__ . '/../models/Users.php';
 try {
     $errors = [];
 
-
-
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         $datas = filter_input_array(INPUT_POST, [

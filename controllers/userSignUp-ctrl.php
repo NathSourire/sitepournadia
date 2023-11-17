@@ -3,15 +3,12 @@ require_once __DIR__  . '/../models/Users.php';
 require_once __DIR__ . '/../helpers/init.php';
 require_once __DIR__ . '/../helpers/JWT.php';
 
-
-
 try {
 
     $dateNow = date('Y-m-d');
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
     $userObj = Users::get($id_user);
     $errors = [];
-
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         // $role_management = filter_input(INPUT_POST, 'role_management', FILTER_SANITIZE_NUMBER_INT);
@@ -92,6 +89,12 @@ try {
             }
         }
         
+        if (Users::isExist($email)){
+            $errors['email'] = 'Cette adresse mail existe déjà!';
+            header('location: /');
+            die;
+        }
+
         if (empty($errors)) {
             $pdo = Database::connect();
             $newUser = new Users();
@@ -130,7 +133,6 @@ try {
                 throw new Exception("Erreur lors de votre inscription:");
             }
         }
-        
     }
 } catch (\Throwable $th) {
 

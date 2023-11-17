@@ -9,14 +9,11 @@ try {
     $errors = [];
 
     $jwt = filter_input(INPUT_GET, 'jwt');
-    
     $payload = JWT::get($jwt);
-    
     if(!$payload){
         throw new Exception("Lien non valide ou expiré!", 1);
     }
     $id_user = $payload->id_user;
-    
     $user = Users::get($id_user);
     if (!$user) {
         throw new Exception("Ce compte n'existe pas", 2);
@@ -24,7 +21,6 @@ try {
     if (!is_null($user->confirmed_at)) {
         throw new Exception("Vous avez déjà confirmé votre inscription", 3);
     }
-
     $isConfirmed = Users::confirmSignUp($id_user);
     if(!$isConfirmed){
         throw new Exception("Problème lors de la validation de votre inscription", 4);

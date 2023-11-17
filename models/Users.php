@@ -246,4 +246,21 @@ class Users
         $sth->execute();
         return (bool) $sth->rowCount();
     }
+
+    // verification si l'adresse mail est en bdd
+    public static function isExist($email): bool
+    {
+        $pdo = Database::connect();
+        $sql = 'SELECT COUNT(*) FROM `users` WHERE `email` = :email';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':email', $email);
+        $sth->execute();
+        $result = $sth->fetch();
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
