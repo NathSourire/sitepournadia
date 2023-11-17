@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__  . '/../../models/Users.php';
-require_once __DIR__ . '/../../config/constant.php';
-require_once __DIR__ . '/../../config/regex.php';
+require_once __DIR__ . '/../../helpers/init.php';
+
 
 
 try {

@@ -59,7 +59,7 @@ class Galleries
     public static function get(int $id_galleries): object|bool
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`galleries` 
+        $sql = 'SELECT * FROM `galleries` 
         WHERE `id_galleries` = :id_galleries;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
@@ -82,7 +82,7 @@ class Galleries
     public static function get_all(): array
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`galleries`
+        $sql = 'SELECT * FROM `galleries`
         JOIN `product` ON `product`.`id_product` = `galleries`.`id_product`
         WHERE `galleries`.`archived_at` IS NULL
         ORDER BY `name_img` ASC, `image` ASC;';
@@ -94,7 +94,7 @@ class Galleries
     public static function get_all_archived(): array
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`galleries`
+        $sql = 'SELECT * FROM `galleries`
         ORDER BY `name_img` ASC , `image` ASC;';
         $sth = $pdo->query($sql);
         $result = $sth->fetchAll();

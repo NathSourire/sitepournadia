@@ -88,49 +88,50 @@ try {
                 $errors['phone'] = 'Veuillez entrer un numéro de téléphone valide';
             }
         }
+
+        // if(Users::isExist($email)){
+        // $errors['email'] = 'Cette adresse mail existe déjà!';
+        // }
         
-        if (Users::isExist($email)){
-            $errors['email'] = 'Cette adresse mail existe déjà!';
-            header('location: /');
-            die;
-        }
-
         if (empty($errors)) {
-            $pdo = Database::connect();
-            $newUser = new Users();
-            $newUser->set_lastname($lastname);
-            $newUser->set_firstname($firstname);
-            $newUser->set_date_of_birthday($dateOfBirthday);
-            $newUser->set_zipcode($zipcode);
-            $newUser->set_city($city);
-            $newUser->set_phone($phone);
-            $newUser->set_email($email);
-            $newUser->set_message($message);
-            $newUser->set_password($password);
-            $isUserSaved = $newUser->insert();
-            $id_user = $pdo->lastInsertId();
-            if ($isUserSaved == true) {
-                header('location: /controllers/userSignIn-ctrl.php');
-                die;
-            }
+            try {
+                $pdo = Database::connect();
+                $newUser = new Users();
+                $newUser->set_lastname($lastname);
+                $newUser->set_firstname($firstname);
+                $newUser->set_date_of_birthday($dateOfBirthday);
+                $newUser->set_zipcode($zipcode);
+                $newUser->set_city($city);
+                $newUser->set_phone($phone);
+                $newUser->set_email($email);
+                $newUser->set_message($message);
+                $newUser->set_password($password);
+                $isUserSaved = $newUser->insert();
+                $id_user = $pdo->lastInsertId();
+                if ($isUserSaved == true) {
+                    header('location: /controllers/userSignIn-ctrl.php');
+                }
 
-            if ($isUserSaved) {
-                //envoi de mail
-                $payload = (object) ['id_user' => $id_user];
-                $jwt = JWT::create($payload);
-                $to = $email;
-                $subject = 'Confirmation de votre inscription!';
-                $link = HOST . '/controllers/userConfirmed-ctrl.php?jwt=' . $jwt;
-                $messages = '<p>
+                if ($isUserSaved) {
+                    //envoi de mail
+                    $payload = (object) ['id_user' => $id_user];
+                    $jwt = JWT::create($payload);
+                    $to = $email;
+                    $subject = 'Confirmation de votre inscription!';
+                    $link = HOST . '/controllers/userConfirmed-ctrl.php?jwt=' . $jwt;
+                    $messages = '<p>
                             Veuillez cliquer sur ce lien pour valider votre inscription.<br>
                             <a href="' . $link . '">Confirmation</a>
                             </p>';
-                mail($to, $subject, $messages);
-                $messages  = '<p>
-                Votre inscription est prise en compte. veuillez vérifier vos emails
-                </p>';
-            } else {
-                throw new Exception("Erreur lors de votre inscription:");
+                    mail($to, $subject, $messages);
+                    $messages  = '<p>
+                    Votre inscription est prise en compte. veuillez vérifier vos emails
+                    </p>';
+                } else {
+                    throw new Exception("Erreur lors de votre inscription:");
+                }
+            } catch (\Throwable $th) {
+                FlashMessage::set($th->getMessage(), ERROR);
             }
         }
     }

@@ -69,8 +69,7 @@ class Product
     public static function get(int $id_product): object|bool
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`product` 
-            JOIN `sheet_products` ON `product`.`id_sheet_product` = `sheet_products`.`id_sheet_product`
+        $sql = 'SELECT * FROM `product` 
             WHERE `product`.`id_product` = :id_product;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
@@ -96,8 +95,7 @@ class Product
     public static function get_all(): array
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`product`
-            JOIN `sheet_products` ON `product`.`id_sheet_product` = `sheet_products`.`id_sheet_product`
+        $sql = 'SELECT * FROM `product`
             ORDER BY `name_product` ASC;';
         $sth = $pdo->query($sql);
         $result = $sth->fetchAll();

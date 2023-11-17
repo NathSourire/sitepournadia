@@ -110,7 +110,7 @@ class Users
     public static function get(int $id_user): object|bool
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`users` 
+        $sql = 'SELECT * FROM `users` 
         WHERE `id_user` = :id_user;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
@@ -145,7 +145,7 @@ class Users
     public static function get_all(): array
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM `nadia`.`users`
+        $sql = 'SELECT * FROM `users`
         ORDER BY `lastname` ASC , `firstname` ASC;';
         $sth = $pdo->query($sql);
         $result = $sth->fetchAll();
