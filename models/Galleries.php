@@ -71,10 +71,11 @@ class Galleries
     public function insert()
     {
         $pdo = Database::connect();
-        $sql = 'INSERT INTO `galleries` ( `name_img`, `image` )  VALUES ( :name_img, :image ) ;';
+        $sql = 'INSERT INTO `galleries` ( `name_img`, `image`, `id_product` )  VALUES ( :name_img, :image, :id_product ) ;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_img', $this->get_name_img(), PDO::PARAM_STR);
         $sth->bindValue(':image', $this->get_image(), PDO::PARAM_STR);
+        $sth->bindValue(':id_product', $this->get_id_product(), PDO::PARAM_INT);
         $result = $sth->execute();
         return $result;
     }

@@ -1,27 +1,25 @@
 <?php
 require_once __DIR__ . '/../../helpers/init.php';
+require_once __DIR__ . '/../../models/Product.php';
 require_once __DIR__ . '/../../models/Galleries.php';
 
 try {
-    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
+    $products = Product::get_all();
+    $productobj = Product::get($id_product);
     $id_galleries = intval(filter_input(INPUT_GET, 'id_galleries', FILTER_SANITIZE_NUMBER_INT));
     $images = Galleries::get_all_archived();
     $imageobj = Galleries::get($id_galleries);
 
-    // archive 
-    switch ($action) {
-        case 'archive':
-            $archived = (int) Galleries::archived($id_galleries);
-            header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?archive=' . $archived);
-            die;
-        case 'restor':
-            $restor = (int) Galleries::restored($id_galleries);
-            header('location: /controllers/dashboard/dashboard_galleries_ctrl.php?restor=' . $restored);
-            die;
-    }
-
     $errors = [];
+
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+        
+        $name_product = filter_input(INPUT_POST, 'name_product', FILTER_SANITIZE_SPECIAL_CHARS);
+        $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        
         $nameimg = filter_input(INPUT_POST, 'nameimg', FILTER_SANITIZE_SPECIAL_CHARS);
         if (empty($nameimg)) {
             $errors['nameimg'] = 'Veuillez entrer un nom pour l\'image ';
@@ -59,29 +57,33 @@ try {
             $newImage = new Galleries();
             $newImage->set_name_img($nameimg);
             $newImage->set_image($newnamefile);
+            $newImage->set_id_product($id_product);
             $saved = $newImage->insert();
         }
         if ($saved) {
-            FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS); 
-        }else {
-            FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR); 
+            FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
+        } else {
+            FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);
         }
 
         if (empty($errors)) {
-            $newImage = new Galleries();
-            $newImage->set_name_img($nameimg);
-            $newImage->set_image($newnamefile);
-            $newImage->set_id_galleries($id_galleries);
-            $saved = $newImage->update();
+            $newProduct = new Product();
+            $newProduct->set_name_product($name_product);
+            $newProduct->set_price($price);
+            $newProduct->set_description($description);
+            $newProduct->set_id_product($id_product);
+            $saved = $newProduct->update();
         }
         if ($saved) {
-            FlashMessage::set('La modification s\'est bien déroulée!', SUCCESS); 
-        }else {
-            FlashMessage::set('La modification s\'est mal passée!', ERROR); 
+            header('location: /controllers/dashboard/dashboard_product_ctrl.php');
+            FlashMessage::set('La modification s\'est bien déroulée!', SUCCESS);
+        } else {
+            FlashMessage::set('La modification s\'est mal passée!', ERROR);
         }
     }
 } catch (\Throwable $th) {
     $errors = $th->getMessage();
+
 
 
     include __DIR__ . '/../../views/templates/dashboardheader.php';
@@ -91,5 +93,5 @@ try {
 }
 
 include __DIR__ . '/../../views/templates/dashboardheader.php';
-include __DIR__ . '/../../views/dashboard/dashboard_galleries.php';
+include __DIR__ . '/../../views/dashboard/dashboard_change_product.php';
 include __DIR__ . '/../../views/templates/footer.php';

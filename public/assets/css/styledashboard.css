@@ -22,6 +22,16 @@ body {
     color: red;
 }
 
+.nav li a {
+    font-size: 18px;
+    color: #001219;
+}
+
+.logonav{
+    height:100px;
+    width: 150px;
+}
+
 @font-face {
     font-family: Gantari !important;
     src: url(../font/Gantari-Regular.ttf);

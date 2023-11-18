@@ -1,14 +1,16 @@
 <?php
 require_once __DIR__ . '/../../helpers/init.php';
 require_once __DIR__ . '/../../models/Product.php';
+require_once __DIR__ . '/../../models/Galleries.php';
 
 try {
-    
+
     $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
     $products = Product::get_all();
+    $images = Galleries::get_all();
     $productobj = Product::get($id_product);
-    
+
     $errors = [];
 
     // archive 
@@ -36,14 +38,10 @@ try {
             $newProduct->set_description($description);
             $saved = $newProduct->insert();
         }
-
-        if (empty($errors)) {
-            $newProduct = new Product();
-            $newProduct->set_name_product($name_product);
-            $newProduct->set_price($price);
-            $newProduct->set_description($description);
-            $newProduct->set_id_product($id_product);
-            $saved = $newProduct->update();
+        if ($saved) {
+            FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
+        } else {
+            FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);
         }
     }
 } catch (\Throwable $th) {

@@ -6,9 +6,8 @@ class Product
 
     private int $id_product;
     private string $name_product;
-    private int $price;
+    private string $price;
     private string $description;
-    private int $id_galleries;
     private ?DateTime $archived_product_at;
 
     public function get_id_product(): int
@@ -29,11 +28,11 @@ class Product
         $this->name_product = $name_product;
     }
 
-    public function get_price(): int
+    public function get_price(): string
     {
         return $this->price;
     }
-    public function set_price(int $price)
+    public function set_price(string $price)
     {
         $this->price = $price;
     }
@@ -45,15 +44,6 @@ class Product
     public function set_description(string $description)
     {
         $this->description = $description;
-    }
-
-    public function get_id_galleries(): int
-    {
-        return $this->id_galleries;
-    }
-    public function set_id_galleries(int $id_galleries)
-    {
-        $this->id_galleries = $id_galleries;
     }
 
     public function get_archived_at(): DateTime
@@ -82,7 +72,7 @@ class Product
     public function insert()
     {
         $pdo = Database::connect();
-        $sql = 'INSERT INTO `product` ( `name_product`, `price`, `description` )  VALUES ( :name_product, :price, :description) ;';
+        $sql = 'INSERT INTO `product` (`name_product`, `price`, `description`) VALUES (:name_product, :price, :description);';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_product', $this->get_name_product(), PDO::PARAM_STR);
         $sth->bindValue(':price', $this->get_price(), PDO::PARAM_STR);
@@ -90,7 +80,6 @@ class Product
         $result = $sth->execute();
         return $result;
     }
-
     // fonction pour tout afficher
     public static function get_all(): array
     {
@@ -106,7 +95,8 @@ class Product
     public function update(): bool
     {
         $pdo = Database::connect();
-        $sql = 'UPDATE `product` SET `name_product` = :name_product, `price` = :price, `description`= :description, `id_product` = :id_product ;';
+        $sql = 'UPDATE `product` SET `name_product` = :name_product, `price` = :price, `description`= :description 
+        WHERE `id_product` = :id_product;';
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':name_product', $this->get_name_product(), PDO::PARAM_STR);
         $sth->bindValue(':price', $this->get_price(), PDO::PARAM_STR);
@@ -115,33 +105,30 @@ class Product
         $sth->execute();
         return (bool) $sth->rowCount();
     }
-
-        //fonction pour archiver une image et lui attribué une date
-        public static function archived(int $id_product): bool
-        {
-            $pdo = Database::connect();
-            $sql = 'UPDATE `product` SET `archived_product_at`= NOW() WHERE `id_product` = :id_product ;';
-            $sth = $pdo->prepare($sql);
-            $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
-            $sth->execute();
-            $result = $sth->fetch();
-            if ($result) {
-                return true;
-            } else {
-                return false;
-            }
+    //fonction pour archiver une image et lui attribué une date
+    public static function archived(int $id_product): bool
+    {
+        $pdo = Database::connect();
+        $sql = 'UPDATE `product` SET `archived_product_at`= NOW() WHERE `id_product` = :id_product ;';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetch();
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
-    
-        //fonction pour retirer de l'archive une image et lui attribué une date
-        public static function restored(int $id_product): bool
-        {
-            $pdo = Database::connect();
-            $sql = 'UPDATE `product` SET `archived_product_at`= NULL WHERE `id_product` = :id_product ;';
-            $sth = $pdo->prepare($sql);
-            $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
-            $sth->execute();
-            return (bool) $sth->rowCount();
-        }
+    }
 
-
+    //fonction pour retirer de l'archive une image et lui attribué une date
+    public static function restored(int $id_product): bool
+    {
+        $pdo = Database::connect();
+        $sql = 'UPDATE `product` SET `archived_product_at`= NULL WHERE `id_product` = :id_product ;';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
+        $sth->execute();
+        return (bool) $sth->rowCount();
+    }
 }

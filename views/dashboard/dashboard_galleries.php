@@ -1,21 +1,21 @@
 
 <form enctype="multipart/form-data" method="post">
-    <div>
-        <label class="form-label" for="nameimg">Nom de l'image*</label>
-        <input class="form-control" type="text" id="nameimg" name="nameimg" value="<?= isset($imageobj->name_img) ? htmlspecialchars($imageobj->name_img) : '' ?>" pattern="<?= REGEX_NAME ?>" required placeholder="Ex: carotte">
+<div class="offset-1 offset-md-1 col-10 col-md-10">
+        <label class="form-label form-control-lg" for="nameimg">Nom de l'image</label>
+        <input class="form-control form-control-lg" type="text" id="nameimg" name="nameimg" value="<?= isset($imageobj->name_img) ? htmlspecialchars($imageobj->name_img) : '' ?>" pattern="<?= REGEX_NAME ?>" required placeholder="Ex: carotte">
         <p class="red">
             <?= $errors['nameimg'] ?? '' ?>
         </p>
     </div>
-    <div>
+    <div class="offset-1 offset-md-1 col-10 col-md-10">
         <label class="form-label" for="picture"></label>
-        <input class="form-control" type="file" id="picture" name="picture" accept=".webp, .png, .jpeg, .jpg, .gif" value="<?= isset($imageobj->image) ? htmlspecialchars($imageobj->image) : '' ?>">
+        <input class="form-control form-control-lg" type="file" id="picture" name="picture" accept=".webp, .png, .jpeg, .jpg, .gif" value="<?= isset($imageobj->image) ? htmlspecialchars($imageobj->image) : '' ?>">
         <p class="red">
             <?= $errors['picture'] ?? '' ?>
         </p>
     </div>
-    <div>
-        <button class="btn btn-light" type="submit">Ajouter</button>
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-light my-3" type="submit">Ajouter</button>
     </div>
 </form>
 

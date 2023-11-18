@@ -1,27 +1,25 @@
-<h1> Lister / Modifier / Archiver / Supprimer</h1>
-
 <div class="container">
     <div class="productsheet row">
-
         <form class="row " id="productform" enctype="multipart/form-data" method="post" novalidate>
             <div class="offset-1 offset-md-1 col-10 col-md-10">
+                <div>
+                    <label class="form-label form-control-lg" for="name_product">Nom du produit</label>
+                    <input class="form-control form-control-lg" type="text" name="name_product" id="name_product" 
+                    value="<?= isset($productobj->name_product) ? htmlspecialchars($productobj->name_product) : '' ?>">
+                </div>
+                <div class="imgtext my-5">     
+                    <label class="form-label form-control-lg" for="description">Description</label>
+                    <textarea class="form-control form-control-lg" name="description" id="description" cols="50" rows="10" 
+                    value="<?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?>"><?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?></textarea>
 
-                <div>
-                    <label class="form-label my-5 ms-3" for="name_product">Nom du produit</label>
-                    <input class="form-control form-control-lg ms-3" type="text" name="name_product" id="name_product" value="<?= isset($productobj->name_product) ? htmlspecialchars($productobj->name_product) : '' ?>" readonly>
-                </div>
-                <div class="imgtext my-5 row">
-                    <img class="col-10 col-md-5 ms-5" src="/public/uploads/image/<?= $productobj->image ?>" alt="<?= $productobj->name_img ?>">
-                    <!-- value="<?= isset($productobj->name_img) ? htmlspecialchars($productobj->name_img) : '' ?>" -->
-                    <textarea class="col-10 col-md-5 ms-5 my-3 " name="description" id="description" cols="50" rows="10" value="<?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?>"></textarea>
-                    <label class="form-label" for="description"></label> <br>
                 </div>
                 <div>
-                    <label class="form-label ms-3" for="price">Prix</label>
-                    <input class="form-control form-control-lg ms-3" type="text" name="price" id="price" value="<?= isset($productobj->price) ? htmlspecialchars($productobj->price) : '' ?>" readonly>
+                    <label class="form-label form-control-lg" for="price">Prix</label>
+                    <input class="form-control form-control-lg" type="text" name="price" id="price" 
+                    value="<?= isset($productobj->price) ? htmlspecialchars($productobj->price) : '' ?>">
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-success my-5 ms-3" type="submit">Validation</button>
+                    <button class="btn btn-light my-3" type="submit">Ajouter</button>
                 </div>
             </div>
         </form>
@@ -29,12 +27,11 @@
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row ">
         <h3>Les produits</h3>
-        <table class="table">
+        <table class="table my-5">
             <thead>
                 <th>Nom du produit</th>
-                <th>Photo</th>
                 <th>Prix</th>
                 <th>Description</th>
                 <th>Archivé le </th>
@@ -48,13 +45,13 @@
                 ?>
                     <tr>
                         <td><?= $product->name_product ?></td>
-                        <?php if (isset($product->image)) { ?>
-                            <td><a href="/public/uploads/image/<?= $product->image ?>" target="_blank"><?= $product->image ?></a></td>
-                        <?php } ?>
+                        <!-- <?php if (isset($product->image)) { ?>
+                        <td><a href="/public/uploads/image/<?= $product->image?>" target="_blank" ><?= $product->image ?></a></td>
+                        <?php }?> -->
                         <td><?= $product->price ?></td>
                         <td><?= $product->description ?></td>
                         <td><?= $product->archived_product_at ?></td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?id_product=<?= $product->id_product ?>">
+                        <td><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product->id_product ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>

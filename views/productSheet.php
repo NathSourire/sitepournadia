@@ -4,7 +4,7 @@
                 <p><?= $product->name_product ?></p>
             </div>
             <div class="imgtext my-5 row">
-                <img class="col-10 col-md-5 ms-5" src="<?= $product->image ?>" alt="<?= $product->name_img ?>">
+                <img class="col-10 col-md-5 ms-5" src="/public/uploads/image/<?= $images->image ?>" alt="<?= $images->name_img ?>">
                 <p class="col-10 col-md-5 ms-5">
                     <?= $product->description ?>
                 </p>
@@ -12,7 +12,7 @@
             <form class="row " id="productform" enctype="multipart/form-data" method="post" novalidate>
                 <div class="offset-1 offset-md-1 col-10 col-md-10">
                     <div>
-                        <p><?= $product->price ?></p>
+                        <p>Le prix est <?= $product->price ?> €</p>
                     </div>
                     <div>
                         <label class="form-label ms-3 my-3 " for="quantity">Quantité</label>

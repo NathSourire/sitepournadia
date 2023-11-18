@@ -7,8 +7,6 @@ require_once __DIR__ . '/../..//helpers/init.php';
 try {
 
 
-
-
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();

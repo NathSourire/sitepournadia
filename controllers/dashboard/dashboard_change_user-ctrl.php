@@ -38,7 +38,6 @@ try {
                 die;
             }
         }
-
     }
 } catch (\Throwable $th) {
 
@@ -50,8 +49,6 @@ try {
     include __DIR__ . '/../../views/templates/footer.php';
     die;
 }
-
-
 
 include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_change_user.php';

@@ -39,6 +39,11 @@ try {
             $newUser->set_password($password);
             $saved = $newUser->insert();
         }
+        if ($saved) {
+            FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS); 
+        }else {
+            FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR); 
+        }
     }
     switch ($action) {
             // case 'archive':
