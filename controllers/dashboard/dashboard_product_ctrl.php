@@ -4,12 +4,11 @@ require_once __DIR__ . '/../../models/Product.php';
 require_once __DIR__ . '/../../models/Galleries.php';
 
 try {
-
-    $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
+    $id_galleries = intval(filter_input(INPUT_GET, 'id_galleries', FILTER_SANITIZE_NUMBER_INT));
+    // $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
-    $products = Product::get_all();
-    $images = Galleries::get_all();
-    $productobj = Product::get($id_product);
+    $products = Galleries::get_all();
+    $productobj = Galleries::get($id_galleries);
 
     $errors = [];
 

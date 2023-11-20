@@ -64,7 +64,7 @@
                     <div>
                         <label class="form-label" for="message">Votre message</label> <br>
                         <textarea class="form-control form-control-lg  my-3" name="message" id="message" cols="50" rows="10" maxlength="500" placeholder="Message" 
-                        value="<?= isset($userObj->message) ? htmlspecialchars($userObj->message) : '' ?>"></textarea>
+                        value="<?= isset($userObj->message) ? htmlspecialchars($userObj->message) : '' ?>"><?= $userObj->message ?></textarea>
                     </div>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-light my-3 ms-5">Envoie !</button>

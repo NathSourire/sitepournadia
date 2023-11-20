@@ -54,19 +54,6 @@ try {
         }
 
         if (empty($errors)) {
-            $newImage = new Galleries();
-            $newImage->set_name_img($nameimg);
-            $newImage->set_image($newnamefile);
-            $newImage->set_id_product($id_product);
-            $saved = $newImage->insert();
-        }
-        if ($saved) {
-            FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
-        } else {
-            FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);
-        }
-
-        if (empty($errors)) {
             $newProduct = new Product();
             $newProduct->set_name_product($name_product);
             $newProduct->set_price($price);
@@ -80,6 +67,21 @@ try {
         } else {
             FlashMessage::set('La modification s\'est mal passée!', ERROR);
         }
+
+        if (empty($errors)) {
+            $newImage = new Galleries();
+            $newImage->set_name_img($nameimg);
+            $newImage->set_image($newnamefile);
+            $newImage->set_id_product($id_product);
+            $saved = $newImage->insert();
+        }
+        if ($saved) {
+            FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
+        } else {
+            FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);
+        }
+
+        
     }
 } catch (\Throwable $th) {
     $errors = $th->getMessage();

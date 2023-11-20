@@ -49,7 +49,7 @@
                     </div>
                     <div>
                         <label class="form-label" for="phone">Téléphone *</label>
-                        <input class="form-control form-control-lg " type="text" id="phone" name="phone" pattern="<?= REGEX_TEL ?>" value="" required>
+                        <input class="form-control form-control-lg " type="text" id="phone" maxlength="10" name="phone" pattern="<?= REGEX_TEL ?>" value="" required>
                         <p class="red">
                             <?= $errors['phone'] ?? '' ?>
                         </p>

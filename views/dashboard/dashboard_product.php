@@ -32,6 +32,7 @@
         <table class="table my-5">
             <thead>
                 <th>Nom du produit</th>
+                <th>Image</th>
                 <th>Prix</th>
                 <th>Description</th>
                 <th>Archivé le </th>
@@ -44,10 +45,10 @@
                 foreach ($products as $product) {
                 ?>
                     <tr>
-                        <td><?= $product->name_product ?></td>
-                        <!-- <?php if (isset($product->image)) { ?>
+                        <td><?= $product->name_img ?></td>
+                        <?php if (isset($product->image)) { ?>
                         <td><a href="/public/uploads/image/<?= $product->image?>" target="_blank" ><?= $product->image ?></a></td>
-                        <?php }?> -->
+                        <?php }?>
                         <td><?= $product->price ?></td>
                         <td><?= $product->description ?></td>
                         <td><?= $product->archived_product_at ?></td>

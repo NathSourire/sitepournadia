@@ -30,16 +30,16 @@
     </div>
 </div>
 <h2 class="text-center my-5">Produit du moment</h2>
-<div id="carouselExampleRide" class="carousel slide container  " data-bs-ride="true">
+<div id="carouselExampleRide" class="carousel slide container" data-bs-ride="true">
     <div class="carousel-inner row">
         <div class="carousel-item active">
-            <img src="/public/assets/img/Cakeorange.jpg" class="d-block col-12 col-md-6" alt="Cake à orange">
+            <img src="/public/assets/img/Legumes.jpg" class="col-12 col-md-6" alt="Ensemble de légumes">
         </div>
         <?php
         foreach ($images as $image) {
         ?>
             <div class="carousel-item">
-                <img src="/public/uploads/image/<?= $image->image ?>" class="d-block col-12 col-md-6 " alt="<?= $image->name_img ?>">
+                <img src="/public/uploads/image/<?= $image->image ?>" class="col-12 col-md-6" alt="<?= $image->name_img ?>">
             </div>
         <?php } ?>
     </div>

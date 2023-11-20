@@ -143,28 +143,24 @@ class Galleries
         return (bool) $sth->rowCount();
     }
 
-    public static function count(int $id_categories = NULL, string $search = ''): int
+    public static function count(int $id_galleries = NULL, string $search = ''): int
     {
         $pdo = Database::connect();
         $sql = "SELECT count(*) as `count` from `product`
             JOIN `product` ON `product`.`id_product` = `galleries`.`id_product`
             WHERE 1 = 1";
-
         $sql .= " AND (
-                    `categories`.`name` LIKE :search OR
-                    `vehicles`.`model` LIKE :search OR
-                    `vehicles`.`brand` LIKE :search
+                    `galleries`.`name_img` LIKE :search OR
+                    `product`.`name_product` LIKE :search OR
                     )";
-
-        if (!is_null($id_categories)) {
-            $sql .= " AND `categories`.`id_categories` = :id_categories";
+        if (!is_null($id_galleries)) {
+            $sql .= " AND `product`.`id_product` = :id_product";
         }
         $sql .= ";";
-
         $sth = $pdo->prepare($sql);
         $sth->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
-        if (!is_null($id_categories)) {
-            $sth->bindValue(':id_categories', $id_categories, PDO::PARAM_INT);
+        if (!is_null($id_galleries)) {
+            $sth->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
         }
         $sth->execute();
         $result = $sth->fetchColumn();
