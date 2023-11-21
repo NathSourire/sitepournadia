@@ -39,7 +39,7 @@ try {
                 throw new Exception("Fichier non envoyé", 2);
             }
             if (!in_array($picture['type'], EXTENSION)) {
-                throw new Exception("Veuillez entrer un fichier valide ( soit .png, .jpg, .jpeg, .gif, .pdf, .webp)", 3);
+                throw new Exception("Veuillez entrer un fichier valide ( soit .png, .jpeg, .webp)", 3);
             }
             if ($picture['size'] > FILESIZE) {
                 throw new Exception('Veuillez entrer un fichier avec une taille inferieur', 4);
@@ -49,6 +49,7 @@ try {
             $from = $picture['tmp_name'];
             $to = __DIR__ . '/../../public/uploads/image/' . $newnamefile;
             move_uploaded_file($from, $to);
+
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();
         }
@@ -80,7 +81,6 @@ try {
         } else {
             FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);
         }
-
         
     }
 } catch (\Throwable $th) {

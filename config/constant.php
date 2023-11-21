@@ -5,7 +5,7 @@ define('USER', 'admin');
 define('PASSWORD', 'vpXy5KVf.y@_GroK');
 // image 
 define('EXTENSION', ['JPG' => 'image/jpeg', 'PNG' => 'image/png', 'GIF' => 'image/gif', 'WEBP' => 'image/webp']);
-define('FILESIZE', [3 * 1000 * 1000]);
+define('FILESIZE', [2 * 1024 * 1024]);
 // temps validation mail 20mins
 define('TIME_TO_EXPIRE', 20 * 60);
 // hash mdp

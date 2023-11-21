@@ -7,7 +7,9 @@ try {
     $id_galleries = intval(filter_input(INPUT_GET, 'id_galleries', FILTER_SANITIZE_NUMBER_INT));
     // $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+    $delete = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_NUMBER_INT); 
     $products = Galleries::get_all();
+    $products1 = Product::get_all();
     $productobj = Galleries::get($id_galleries);
 
     $errors = [];
@@ -16,12 +18,18 @@ try {
     switch ($action) {
         case 'archive':
             $archived = (int) Product::archived($id_product);
-            header('location: /controllers/dashboard/dashboard_product_ctrl.php ?archive=' . $archived);
+            header('location: /controllers/dashboard/dashboard_product_ctrl.php?archive=' . $archived);
             die;
         case 'restor':
             $restor = (int) Product::restored($id_product);
-            header('location: /controllers/dashboard/dashboard_product_ctrl.php ?restor=' . $restored);
+            header('location: /controllers/dashboard/dashboard_product_ctrl.php?restor=' . $restored);
             die;
+        case 'delete':
+            $isDeleted = (int) Galleries::delete($id_galleries);
+            if ($isDeleted){
+            header('location: /controllers/dashboard/dashboard_product_ctrl.php?delete='.$isDeleted);
+            die;
+            }
     }
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {

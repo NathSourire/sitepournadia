@@ -131,4 +131,15 @@ class Product
         $sth->execute();
         return (bool) $sth->rowCount();
     }
+
+    // fonction pour supprimer les fiches produit
+    public static function delete(int $id_product): bool
+    {
+        $pdo = Database::connect();
+        $sql = 'DELETE FROM `product` WHERE `id_product` = :id_product ;';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_product', $id_product, PDO::PARAM_INT);
+        $sth->execute();
+        return (bool) $sth->rowCount();
+    }
 }

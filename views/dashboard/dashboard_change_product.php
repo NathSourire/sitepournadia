@@ -24,7 +24,7 @@
             </div>
             <div>
                 <label class="form-label" for="picture"></label>
-                <input class="form-control" type="file" id="picture" name="picture" accept=".webp, .png, .jpeg, .jpg, .gif" value="<?= isset($imageobj->image) ? htmlspecialchars($imageobj->image) : '' ?>">
+                <input class="form-control" type="file" id="picture" name="picture" accept=".webp, .png, .jpeg, .jpg" value="<?= isset($imageobj->image) ? htmlspecialchars($imageobj->image) : '' ?>">
                 <p class="red">
                     <?= $errors['picture'] ?? '' ?>
                 </p>

@@ -53,25 +53,55 @@
                         <td><?= $product->price ?></td>
                         <td><?= $product->description ?></td>
                         <td><?= $product->archived_product_at ?></td>
-                        <td><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product->id_product ?>">
+                        <td><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=archive&id_product=<?= $product->id_product ?>">
+                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=archive&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=restor&id_product=<?= $product->id_product ?>">
+                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=restor&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=delete&id_product=<?= $product->id_product ?>">
+                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=delete&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btndelet.png" alt="poubelle">
                             </a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
+
+<!-- 
+            <thead>
+                <th>Nom du produit</th>
+                <th>Image</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Archivé le </th>
+                <th>Modifier</th>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($products1 as $product1) {
+                ?>
+                    <tr>
+                        <td><?= $product1->name_product ?></td>
+                        <td>Null</td>
+                        <td><?= $product1->price ?></td>
+                        <td><?= $product1->description ?></td>
+                        <td><?= $product1->archived_product_at ?></td>
+                        <td><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product1->id_product ?>">
+                                <img src="/public/assets/img/btnwrite.png" alt="stylo">
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody> -->
+
+
+
         </table>
     </div>
 </div>

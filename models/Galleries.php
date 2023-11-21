@@ -166,4 +166,53 @@ class Galleries
         $result = $sth->fetchColumn();
         return $result;
     }
+    // fonction pour supprimer les fiches produit
+    // public static function delete(int $id_galleries): bool
+    // {
+    //     $pdo = Database::connect();
+    //     $sql = 'DELETE FROM `galleries` 
+    //     JOIN `product` ON `product`.`id_product` = `galleries`.`id_product`
+    //     WHERE `galleries`.`id_galleries` = :id_galleries ;';
+    //     $sth = $pdo->prepare($sql);
+    //     $sth->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
+    //     $sth->execute();
+    //     return (bool) $sth->rowCount();
+    // }
+
+
+public static function delete(int $id_galleries): bool
+{
+    $pdo = Database::connect();
+    
+    // Étape 1 : Sélection des identifiants des fiches produit liées à la galerie
+    $sql = 'SELECT `galleries`.`id_product`
+        FROM `galleries`
+        JOIN `product` ON `product`.`id_product` = `galleries`.`id_product`
+        WHERE `galleries`.`id_galleries` = :id_galleries';
+    $sth = $pdo->prepare($sql);
+    $sth->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
+    $sth->execute();
+    
+    // Récupération des identifiants des fiches produit
+    $id_product = $sth->fetchAll(PDO::FETCH_COLUMN);
+    
+    // Étape 2 : Suppression des fiches produit liées à la galerie
+    if (!empty($id_product)) {        
+        // Suppression des fiches produit en utilisant IN pour spécifier les identifiants
+        $sqlDelete = 'DELETE FROM `product` WHERE `id_product` IN (' . implode(',', $id_product) . ')';
+        $sthDelete = $pdo->prepare($sqlDelete);
+        $sthDelete->execute();
+        
+        // Suppression de la fiche de galerie une fois que les fiches produit liées ont été supprimées
+        $sqlGalleryDelete = 'DELETE FROM `galleries` WHERE `id_galleries` = :id_galleries';
+        $sthGalleryDelete = $pdo->prepare($sqlGalleryDelete);
+        $sthGalleryDelete->bindValue(':id_galleries', $id_galleries, PDO::PARAM_INT);
+        $sthGalleryDelete->execute();
+        
+        return true;
+    }
+    
+    return false;
 }
+}
+
