@@ -39,7 +39,8 @@
         foreach ($images as $image) {
         ?>
             <div class="carousel-item">
-                <img src="/public/uploads/image/<?= $image->image ?>" class="col-12 col-md-6" alt="<?= $image->name_img ?>">
+            <a href="/controllers/productSheet-ctrl.php?id_galleries=<?= $image->id_galleries ?>&id_product=<?= $image->id_product ?>">
+                <img src="/public/uploads/image/<?= $image->image ?>" class="col-12 col-md-6" alt="<?= $image->name_img ?>"></a>
             </div>
         <?php } ?>
     </div>

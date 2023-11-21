@@ -8,10 +8,9 @@
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-center">
-                    <h3>Nadia's</h3>
+                    <h3>Le potager de Nadia</h3>
                 </div>
-                <hr>
-                <div class="d-flex justify-content-center"><a href="/controllers/mensions_legales_ctrl.php" target="_blank" rel="noopener noreferrer">Mentions Légales</a></div>
+                <div class="my-5 d-flex justify-content-center"><a href="/controllers/mensions_legales_ctrl.php" target="_blank" rel="noopener noreferrer">Mentions Légales</a></div>
             </div>
         </div>
     </div>

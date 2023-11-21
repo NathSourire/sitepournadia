@@ -27,16 +27,13 @@ try {
         $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_SPECIAL_CHARS);
         $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
         // récuperation du mot de passe nettoyage et validation
-        // $password1 = filter_input(INPUT_POST, 'password1', FILTER_DEFAULT);
-        // $password2 = filter_input(INPUT_POST, 'password2', FILTER_DEFAULT);
-
-        // if (!empty($password1)) {
-        //     $errors['password1'] = '';
-        // } elseif ($password1 !== $password2) {
-        //     $errors['password1'] = 'Veuillez entrer des mots de passe identique';
-        // } else {
-        //     $password = password_hash($password1, PASSWORD_BCRYPT);
-        // }
+        $password1 = filter_input(INPUT_POST, 'password1', FILTER_DEFAULT);
+        $password2 = filter_input(INPUT_POST, 'password2', FILTER_DEFAULT);
+        if ($password1 !== $password2) {
+            $errors['password1'] = 'Veuillez entrer des mots de passe identique';
+        } else {
+            $password = password_hash($password1, PASSWORD_BCRYPT);
+        }
 
         if (empty($errors)) {
             $newUser = new Users();
@@ -48,7 +45,14 @@ try {
             $newUser->set_phone($phone);
             $newUser->set_email($email);
             $newUser->set_message($message);
-            // $newUser->set_password($password);
+            if (empty($password1 && $password2)) {
+                // Si le champ est vide, on conserve l'ancien mot de passe
+                $getPassword = $userObj->password;
+                $newUser->set_password($getPassword);
+            } else {
+                // Si le champ n'est pas vide, on met à jour le mot de passe avec la nouvelle donnée
+                $newUser->set_password($password);
+            }
             $newUser->set_id_user($id_user);
             $saved = $newUser->update();
             if ($saved == true) {

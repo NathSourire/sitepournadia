@@ -1,7 +1,7 @@
 <div>
-    <?php
+    <!-- <?php
     FlashMessage::display();
-    ?>
+    ?> -->
 </div>
 <table class="text-center my-5 table table-success table-striped">
     <h2 class="text-center my-5">Votre panier</h2>
