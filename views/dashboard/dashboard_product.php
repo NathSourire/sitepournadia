@@ -31,41 +31,41 @@
         <h3>Les produits</h3>
         <table class="table my-5">
             <thead>
-                <th>Nom du produit</th>
-                <th>Image</th>
-                <th>Prix</th>
-                <th>Description</th>
-                <th>Archivé le </th>
-                <th>Modifier</th>
-                <th>Archiver</th>
-                <th>Restorer</th>
-                <th>Supprimer</th>
+                <th class=" bg-transparent ">Nom du produit</th>
+                <th class=" bg-transparent ">Image</th>
+                <th class=" bg-transparent ">Prix</th>
+                <th class=" bg-transparent ">Description</th>
+                <th class=" bg-transparent ">Archivé le </th>
+                <th class=" bg-transparent ">Modifier</th>
+                <th class=" bg-transparent ">Archiver</th>
+                <th class=" bg-transparent ">Restorer</th>
+                <th class=" bg-transparent ">Supprimer</th>
             </thead>
             <tbody>
                 <?php
                 foreach ($products as $product) {
                 ?>
                     <tr>
-                        <td><?= $product->name_img ?></td>
+                        <td class=" bg-transparent "><?= $product->name_img ?></td>
                         <?php if (isset($product->image)) { ?>
-                        <td><a href="/public/uploads/image/<?= $product->image?>" target="_blank" ><?= $product->image ?></a></td>
+                        <td class=" bg-transparent "><a href="/public/uploads/image/<?= $product->image?>" target="_blank" ><?= $product->image ?></a></td>
                         <?php }?>
-                        <td><?= $product->price ?></td>
-                        <td><?= $product->description ?></td>
-                        <td><?= $product->archived_product_at ?></td>
-                        <td><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
+                        <td class=" bg-transparent "><?= $product->price ?></td>
+                        <td class=" bg-transparent "><?= $product->description ?></td>
+                        <td class=" bg-transparent "><?= $product->archived_product_at ?></td>
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=archive&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=archive&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=restor&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=restor&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=delete&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=delete&id_product=<?= $product->id_product ?>&id_galleries=<?= $product->id_galleries ?>">
                                 <img src="/public/assets/img/btndelet.png" alt="poubelle">
                             </a>
                         </td>

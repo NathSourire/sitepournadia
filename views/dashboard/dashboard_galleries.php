@@ -24,32 +24,32 @@
         <h3>Les images</h3>
         <table class="table">
             <thead>
-                <th>Nom du produit</th>
-                <th>Photo</th>
-                <th>Archivé le </th>
-                <th>Modifier</th>
-                <th>Archiver</th>
-                <th>Restorer</th>
+                <th class=" bg-transparent ">Nom du produit</th>
+                <th class=" bg-transparent ">Photo</th>
+                <th class=" bg-transparent ">Archivé le </th>
+                <th class=" bg-transparent ">Modifier</th>
+                <th class=" bg-transparent ">Archiver</th>
+                <th class=" bg-transparent ">Restorer</th>
             </thead>
             <tbody>
                 <?php
                 foreach ($images as $image) {
                 ?>
                     <tr>
-                        <td><?= $image->name_img ?></td>
+                        <td class=" bg-transparent "><?= $image->name_img ?></td>
                         <?php if (isset($image->image)) { ?>
-                        <td><a href="/public/uploads/image/<?= $image->image?>" target="_blank" ><?= $image->image ?></a></td>
+                        <td class=" bg-transparent "><a href="/public/uploads/image/<?= $image->image?>" target="_blank" ><?= $image->image ?></a></td>
                         <?php }?>
-                        <td><?= $image->archived_at ?></td>
-                        <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?id_galleries=<?= $image->id_galleries ?>">
+                        <td class=" bg-transparent "><?= $image->archived_at ?></td>
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?id_galleries=<?= $image->id_galleries ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=archive&id_galleries=<?= $image->id_galleries ?>">
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=archive&id_galleries=<?= $image->id_galleries ?>">
                                 <img src="/public/assets/img/btnarchived.png" alt="archive">
                             </a>
                         </td>
-                        <td><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=restor&id_galleries=<?= $image->id_galleries ?>">
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=restor&id_galleries=<?= $image->id_galleries ?>">
                                 <img src="/public/assets/img/btndelet.png" alt="poubelle">
                             </a>
                         </td>

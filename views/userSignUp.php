@@ -21,7 +21,7 @@
                     <div>
                         <label class="form-label" for="firstnames">Prénom *</label>
                         <input class="form-control form-control-lg " type="text" id="firstnames" name="firstname" autocomplete="given-name" 
-                        pattern="<?= REGEX_NAME ?>" require>
+                        pattern="<?= REGEX_NAME ?>" required>
                         <p class="red">
                             <?= $errors['firstname'] ?? '' ?>
                         </p>
