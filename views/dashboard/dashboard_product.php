@@ -39,6 +39,7 @@
                 <th>Modifier</th>
                 <th>Archiver</th>
                 <th>Restorer</th>
+                <th>Supprimer</th>
             </thead>
             <tbody>
                 <?php
@@ -61,6 +62,10 @@
                             </a>
                         </td>
                         <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=restor&id_product=<?= $product->id_product ?>">
+                                <img src="/public/assets/img/btnarchived.png" alt="archive">
+                            </a>
+                        </td>
+                        <td><a href="/controllers/dashboard/dashboard_product_ctrl.php?action=delete&id_product=<?= $product->id_product ?>">
                                 <img src="/public/assets/img/btndelet.png" alt="poubelle">
                             </a>
                         </td>

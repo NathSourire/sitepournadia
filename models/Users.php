@@ -195,7 +195,6 @@ class Users
         $sth->bindValue(':phone', $this->get_phone(), PDO::PARAM_STR);
         $sth->bindValue(':city', $this->get_city(), PDO::PARAM_STR);
         $sth->bindValue(':zipcode', $this->get_zipcode(), PDO::PARAM_INT);
-        // $sth->bindValue(':password', $this->get_password(), PDO::PARAM_STR);
         $sth->bindValue(':message', $this->get_message(), PDO::PARAM_STR);
         $sth->bindValue(':id_user', $this->get_id_user(), PDO::PARAM_INT);
         $sth->execute();
