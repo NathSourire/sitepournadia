@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once __DIR__ . '/../helpers/init.php';
 require_once __DIR__ . '/../models/Product.php';
 require_once __DIR__ . '/../models/Galleries.php';
@@ -10,13 +10,14 @@ try {
     $images = Galleries::get($id_galleries);
     $errors = [];
 
-
+    if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+        $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-catch (\Throwable $th) {
+} catch (\Throwable $th) {
 
     $errors = $th->getMessage();
 
-    
+
     include __DIR__ . '/../views/templates/header.php';
     include __DIR__ . '/../views/templates/error.php';
     include __DIR__ . '/../views/templates/footer.php';

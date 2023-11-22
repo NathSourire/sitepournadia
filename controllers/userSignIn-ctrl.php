@@ -13,8 +13,6 @@ try {
             "email" => FILTER_SANITIZE_EMAIL,
             "password" => FILTER_DEFAULT
         ]);
-
-        try {
             $users = Users::getByEmail($datas["email"]);
             if (!$users) {
                 throw new Exception("Echec d'authentification", 1);
@@ -30,16 +28,17 @@ try {
             }
             unset($users->password);
             $_SESSION['users'] = $users;
-            $_SESSION['users']->role_management === 1;
-            header('location: /controllers/dashboard/dashboard_home-ctrl.php');
-            die;    
-        } catch (\Throwable $th) {
-            $errors["email"] = $th->getMessage();
+
+            
+            // if ($_SESSION['users']->role_management === 1) {
+            // header('location: /controllers/dashboard/dashboard_home-ctrl.php');
+            // die;
+            // } 
+            // if ($_SESSION['users']->role_management === NULL) {
+            // header('location: /controllers/home-ctrl.php');
+            // die;
+            // }   
         }
-
-        
-    }
-
     
 } catch (\Throwable $th) {
 

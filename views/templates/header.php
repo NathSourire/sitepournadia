@@ -22,17 +22,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/basket-ctrl.php">Panier</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/productSheet-ctrl.php">Produit</a></li> -->
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/basket-ctrl.php"><img src="/public/assets/img/basket.png" alt=""></a></li>
                 </ul>
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>
         </div>
     </nav>

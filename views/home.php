@@ -3,12 +3,12 @@
     FlashMessage::display();
     ?>
 </div>
-<div class="imgBackground opacity-75 row p-5">
+<div class="imgBackground opacity-75 row p-0">
     <img src="/public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
-    <p>je teste du texte sur mon image</p>
 </div>
 <div id="nadHistory" class="container">
     <div class="row align-items-center mt-2 p-1">
+        <h3 class=" text-center my-5" >Qui suis-je</h3>
         <div class="col-12 col-md-6 "><img class="w-100" src="/public/assets/img/photoaremplacer.jpg" alt="Photo de Nad"></div>
         <div class="col-12 col-md-6">
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente rem deserunt
@@ -29,7 +29,7 @@
         </div>
     </div>
 </div>
-<h2 class="text-center my-5">Produit du moment</h2>
+<h2 class="text-center my-5">Les Produits du moment</h2>
 <section class="container-fluid">
     <div class="row justify-content-center ">
         <div id="carouselExampleAutoplaying" class="carousel slide col-md-6" data-bs-ride="carousel">

@@ -1,36 +1,33 @@
 <div>
     <!-- <?php
-    FlashMessage::display();
-    ?> -->
+            FlashMessage::display();
+            ?> -->
 </div>
-<table class="text-center my-5 table table-success table-striped">
-    <h2 class="text-center my-5">Votre panier</h2>
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Produit</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Somme</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
 
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row ">
+        <h3>Les fiches produits</h3>
+        <table class="table my-5">
+            <thead>
+                <th class=" bg-transparent ">Nom du produit</th>
+                <th class=" bg-transparent ">Prix</th>
+                <th class=" bg-transparent ">Supprimer</th>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class=" bg-transparent ">En cours de réalisation</td>
+                    <td class=" bg-transparent "></td>
+                    <!-- <td class=" bg-transparent "><a href="">
+                            <img src="/public/assets/img/btnwrite.png" alt="stylo">
+                        </a>
+                    </td>
+                    <td class=" bg-transparent "><a href="">
+                            <img src="/public/assets/img/btndelet.png" alt="poubelle">
+                        </a>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

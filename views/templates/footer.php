@@ -1,5 +1,5 @@
 <footer>
-    <div class="container my-5">
+    <div class="container mt-5 p-3">
         <div class="row">
             <div class="col-md-6">
                 <h3 class="d-flex justify-content-center">Contact</h3>

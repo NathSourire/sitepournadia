@@ -51,6 +51,12 @@ body {
     height:100px;
     width: 150px;
 }
+#headNav{
+    background-color: #8b856e;
+}
+footer{
+    background-color: #8b856e;
+}
 @font-face {
     font-family: Gantari;
     src: url(../font/Gantari-Regular.ttf);

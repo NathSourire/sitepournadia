@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../models/Galleries.php';
 
 try {
     $id_galleries = intval(filter_input(INPUT_GET, 'id_galleries', FILTER_SANITIZE_NUMBER_INT));
-    // $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
+    $id_product = intval(filter_input(INPUT_GET, 'id_product', FILTER_SANITIZE_NUMBER_INT));
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
     $delete = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_NUMBER_INT); 
     $products = Galleries::get_all();
