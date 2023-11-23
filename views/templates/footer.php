@@ -1,16 +1,16 @@
 <footer>
-    <div class="container mt-5 p-3">
+    <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6  mt-3">
                 <h3 class="d-flex justify-content-center">Contact</h3>
                 <p class="d-flex justify-content-center my-3"><a href="tel:0637153982">Téléphone: 06. 37. 15. 39. 82</a></p>
                 <p class="d-flex justify-content-center"><a href="mailto:nathsourire@hotmail.com">Email: nathsourire@hotmail.com</a></p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6  mt-3">
                 <div class="d-flex justify-content-center">
-                    <h3>Le potager de Nadia</h3>
+                    <h3>Le Potager de Nadia</h3>
                 </div>
-                <div class="my-5 d-flex justify-content-center"><a href="/controllers/mensions_legales_ctrl.php" target="_blank" rel="noopener noreferrer">Mentions Légales</a></div>
+                <div class="my-4 d-flex justify-content-center"><a href="/controllers/mensions_legales_ctrl.php" target="_blank" rel="noopener noreferrer">Mentions Légales</a></div>
             </div>
         </div>
     </div>

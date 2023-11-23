@@ -25,7 +25,7 @@
                         <td class=" bg-transparent "><?= $product->price ?></td>
                         <td class=" bg-transparent "><?= $product->description ?></td>
                         <!-- <td class=" bg-transparent "><?= $product->archived_product_at ?></td> -->
-                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_product_ctrl.php?id_product=<?= $product->id_product ?>">
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_change_prod-ctrl.php?id_product=<?= $product->id_product ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>
                         </td>
@@ -78,7 +78,7 @@
                 <!-- <th class=" bg-transparent ">Image</th>
                 <th class=" bg-transparent ">Prix</th>
                 <th class=" bg-transparent ">Description</th> -->
-                <th class=" bg-transparent ">Archivé le </th>
+                <!-- <th class=" bg-transparent ">Archivé le </th> -->
                 <th class=" bg-transparent ">Modifier</th>
             </thead>
             <tbody>
@@ -90,7 +90,7 @@
                         <!-- <td class=" bg-transparent ">Null</td>
                         <td class=" bg-transparent "><?= $product1->price ?></td>
                         <td class=" bg-transparent "><?= $product1->description ?></td> -->
-                        <td class=" bg-transparent "><?= $product1->archived_product_at ?></td>
+                        <!-- <td class=" bg-transparent "><?= $product1->archived_product_at ?></td> -->
                         <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_change_product-ctrl.php?id_product=<?= $product1->id_product ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
                             </a>

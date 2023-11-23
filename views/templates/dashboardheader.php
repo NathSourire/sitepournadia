@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/public/assets/img/iconsfav.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script defer src="/public/assets/js/script1.js"></script>
     <link rel="stylesheet" href="/public/assets/css/style.css">
@@ -23,10 +24,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['id_users']) == [] ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['id_users']) == [] ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['id_users']) == [] ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['id_users']) == [] ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/basket-ctrl.php"><img src="/public/assets/img/basket.png" alt=""></a></li>
                 </ul>
                 <!-- <form class="d-flex" role="search">
@@ -36,12 +37,12 @@
             </div>
         </div>
     </nav>
-    <div class="row ">
+    <div>
         <h1 class=" text-center " >Bienvenue dans le dashboard</h1>
         <ul class="nav justify-content-center align-items-center">
             
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_galleries_ctrl.php">Illustration</a></li>
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
+            <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></h4>
+            <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_galleries_ctrl.php">Illustration</a></h4>
+            <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></h4>
         </ul>
     </div>

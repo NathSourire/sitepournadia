@@ -78,4 +78,4 @@ try {
 
 include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_users.php';
-include __DIR__ . '/../../views/templates/footer.php';
+// include __DIR__ . '/../../views/templates/footer.php';

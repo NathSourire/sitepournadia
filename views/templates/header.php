@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/public/assets/img/iconsfav.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script defer src="/public/assets/js/script1.js"></script>
     <link rel="stylesheet" href="/public/assets/css/style.css">
@@ -11,7 +12,7 @@
 </head>
 
 <body class="container-fluide">
-    <nav id="headNav" class="navbar sticky-top navbar-expand-lg ">
+    <nav id="headNav" class="navbar sticky-top navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/controllers/home-ctrl.php">
                 <img class="logonav" src="/public/assets/img/Logo.png" alt="Logo" >

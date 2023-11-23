@@ -4,7 +4,7 @@
     ?>
 </div>
 <div>
-    <h2 class="text-center">Vos informations personnels</h2>
+    <h2 class="text-center mt-5">Vos informations personnels</h2>
     <form id="form" enctype="multipart/form-data" method="post">
         <fieldset class="container  ident">
             <div class="row">

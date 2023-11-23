@@ -14,17 +14,15 @@ body {
 }
 
 .nav li a {
-    font-size: 18px;
-    color: #001219;
+    font-size: 20px;
+    color: #2e0908;
 }
 
-#headNav {
-    background-color: #E9D8A6;
-}
-.inputform{
+.inputform {
     box-shadow: rgba(0, 0, 0, 0.502) 0px 10px 36px 0px, rgba(0, 0, 0, 0.359) 0px 0px 0px 1px !important;
 
 }
+
 .card {
     display: flex;
     flex-wrap: wrap;
@@ -36,27 +34,44 @@ body {
 
 .gallery img {
     border-radius: 3px;
+    border-color: #2e0908;
+    border: 2px solid;
     /* box-shadow: rgba(0, 0, 0, 0.502) 0px 10px 36px 0px, rgba(0, 0, 0, 0.359) 0px 0px 0px 1px; */
     height: 300px;
-    width: 400px;
+    width: 300px;
 }
-.red{
+
+.red {
     color: red;
 }
+
 .card a {
     text-decoration: none;
     color: inherit;
 }
-.logonav{
-    height:100px;
+
+.logonav {
+    height: 100px;
     width: 150px;
 }
-#headNav{
+
+#headNav {
     background-color: #8b856e;
 }
-footer{
+
+footer {
     background-color: #8b856e;
+    height: auto;
 }
+footer h3{
+    color: #2e0908;
+}
+footer a {
+    text-decoration: none;
+    color: inherit;
+    color: #2e0908;
+}
+
 @font-face {
     font-family: Gantari;
     src: url(../font/Gantari-Regular.ttf);

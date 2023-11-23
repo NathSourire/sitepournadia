@@ -1,5 +1,5 @@
 <div id="productsheet" class="container ">
-    <div class="row align-items-center mt-5">
+    <div class="row align-items-center mb-5 mt-5">
         <div class="col-12 col-md-6 "><img class="w-100" src="/public/uploads/image/<?= $images->image ?>" alt="<?= $images->name_img ?>"></div>
         <div class="col-8 col-md-5 ms-5">
             <h3 class="mt-5 mb-3 "><?= $product->name_product ?></h3>

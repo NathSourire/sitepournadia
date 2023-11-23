@@ -3,44 +3,37 @@
     FlashMessage::display();
     ?>
 </div>
-<div class="imgBackground opacity-75 row p-0">
-    <img src="/public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
+<div class="imgBackground opacity-75">
+    <img class="w-100" src="/public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
 </div>
 <div id="nadHistory" class="container">
     <div class="row align-items-center mt-2 p-1">
-        <h3 class=" text-center my-5" >Qui suis-je</h3>
+        <h3 class=" text-center my-5">Qui suis-je</h3>
         <div class="col-12 col-md-6 "><img class="w-100" src="/public/assets/img/photoaremplacer.jpg" alt="Photo de Nad"></div>
         <div class="col-12 col-md-6">
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente rem deserunt
-                nesciunt iure doloribus dolorum ex, architecto similique dolor provident itaque esse. Soluta esse
-                commodi, voluptatibus quas
-                sapiente modi aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste
-                obcaecati debitis unde aut
-                esse nisi, eius temporibus ullam cum cumque! Sint cumque sit illo similique asperiores, numquam
-                ullam aut!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente libero incidunt temporibus fugiat
-                iure nam ipsa suscipit molestias? Iusto maiores molestias asperiores aperiam ad modi quos magni
-                omnis
-                distinctio sapiente! Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eveniet
-                maiores blanditiis ea
-                distinctio ipsa et deleniti? Accusamus unde eaque nihil, quod totam voluptas optio debitis quia
-                aliquam, dolore
-                quos.</p>
+            <p class="text-justify">Je suis passionnée de jardinage depuis plus de 30 ans et j'ai acquis de nombreuses techniques et 
+                savoir-faire au fil du temps. Grâce à mes années d'expérience, ma production de fruits et de légumes est plutôt généreuse. 
+                Afin de partager cette abondance, je propose le surplus à des personnes qui apprécient les produits de qualité.<br>
+                Ma philosophie repose sur une approche naturelle de la culture : je privilégie une alimentation saine sans pesticides, 
+                en cultivant mes plantes avec des engrais naturels. Cette méthode garantit la qualité et la fraîcheur de mes produits, 
+                tout en préservant la santé et l'environnement.<br>
+                C'est avec passion et engagement que je mets à disposition mes récoltes, offrant ainsi à ceux qui apprécient les bienfaits 
+                d'une alimentation saine la possibilité de savourer des produits cultivés avec soin et respect de la nature.</p>
         </div>
     </div>
 </div>
 <h2 class="text-center my-5">Les Produits du moment</h2>
-<section class="container-fluid">
+<section class="container-fluid mb-5">
     <div class="row justify-content-center ">
         <div id="carouselExampleAutoplaying" class="carousel slide col-md-6" data-bs-ride="carousel">
-            <div class="carousel-inner" >
+            <div class="carousel-inner">
                 <?php
                 $firstItem = true; // Ajout d'une variable pour suivre le premier élément
                 foreach ($images as $image) {
                 ?>
                     <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
-                    <a href="/controllers/productSheet-ctrl.php?id_galleries=<?= $image->id_galleries ?>&id_product=<?= $image->id_product ?>">
-                        <img src="/public/uploads/image/<?= $image->image ?>" class="d-block w-100" alt="<?= $image->name_img ?>"></a>
+                        <a href="/controllers/productSheet-ctrl.php?id_galleries=<?= $image->id_galleries ?>&id_product=<?= $image->id_product ?>">
+                            <img src="/public/uploads/image/<?= $image->image ?>" class="d-block w-100" alt="<?= $image->name_img ?>"></a>
                     </div>
                 <?php
                     $firstItem = false; // Marquer le premier élément comme traité après la première itération

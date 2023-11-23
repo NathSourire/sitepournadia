@@ -5,9 +5,9 @@
 </div>
 
 <div>
-    <h2>Votre identité</h2>
+    <h2 class="text-center mt-5">Votre inscription</h2>
     <form id="form" enctype="multipart/form-data" method="post">
-        <fieldset class="container  ident">
+        <fieldset class="container  ident mt-5">
             <div class="row">
                 <div class="inputform offset-1 offset-md-1 col-10 col-md-10">
                     <div>

@@ -62,12 +62,6 @@ try {
             $newProduct->set_id_product($id_product);
             $saved = $newProduct->update();
         }
-        if ($saved) {
-            header('location: /controllers/dashboard/dashboard_product_ctrl.php');
-            FlashMessage::set('La modification s\'est bien déroulée!', SUCCESS);
-        } else {
-            FlashMessage::set('La modification s\'est mal passée!', ERROR);
-        }
 
         if (empty($errors)) {
             $newImage = new Galleries();
@@ -96,4 +90,4 @@ try {
 
 include __DIR__ . '/../../views/templates/dashboardheader.php';
 include __DIR__ . '/../../views/dashboard/dashboard_change_product.php';
-include __DIR__ . '/../../views/templates/footer.php';
+// include __DIR__ . '/../../views/templates/footer.php';
