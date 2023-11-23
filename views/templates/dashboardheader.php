@@ -24,10 +24,11 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
-                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ?  'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/crafts-ctrl.php">Astuces</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSignOut-ctrl.php">Deconnexion</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/basket-ctrl.php"><img src="/public/assets/img/basket.png" alt=""></a></li>
                 </ul>
                 <!-- <form class="d-flex" role="search">
@@ -44,5 +45,6 @@
             <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></h4>
             <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_galleries_ctrl.php">Illustration</a></h4>
             <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></h4>
+            <h4 class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/dashboard/dashboard_add_craft-ctrl.php">Astuces</a></h4>
         </ul>
     </div>

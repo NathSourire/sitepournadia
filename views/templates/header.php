@@ -22,7 +22,8 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/controllers/gallery-ctrl.php">Galerie</a></li>                    
+                    <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/crafts-ctrl.php">Astuces</a></li>
                     <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-block' : 'd-none') ?>" aria-current="page" href="/controllers/userSheet-ctrl.php">Mon compte</a></li>
                     <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignIn-ctrl.php">Connexion</a></li>
                     <li class="nav-item"><a class="nav-link <?= (isset($_SESSION['users']) ? 'd-none' : 'd-block') ?>" aria-current="page" href="/controllers/userSignUp-ctrl.php">Inscription</a></li>

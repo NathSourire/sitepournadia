@@ -8,17 +8,17 @@
 </div>
 <div id="nadHistory" class="container">
     <div class="row align-items-center mt-2 p-1">
-        <h3 class=" text-center my-5">Qui suis-je</h3>
+        <h2 class=" text-center my-5">Qui suis-je</h2>
         <div class="col-12 col-md-6 "><img class="w-100" src="/public/assets/img/photoaremplacer.jpg" alt="Photo de Nad"></div>
         <div class="col-12 col-md-6">
-            <p class="text-justify">Je suis passionnée de jardinage depuis plus de 30 ans et j'ai acquis de nombreuses techniques et 
+            <h5 class="text-justify">Je suis passionnée de jardinage depuis plus de 30 ans et j'ai acquis de nombreuses techniques et 
                 savoir-faire au fil du temps. Grâce à mes années d'expérience, ma production de fruits et de légumes est plutôt généreuse. 
                 Afin de partager cette abondance, je propose le surplus à des personnes qui apprécient les produits de qualité.<br>
                 Ma philosophie repose sur une approche naturelle de la culture : je privilégie une alimentation saine sans pesticides, 
                 en cultivant mes plantes avec des engrais naturels. Cette méthode garantit la qualité et la fraîcheur de mes produits, 
                 tout en préservant la santé et l'environnement.<br>
                 C'est avec passion et engagement que je mets à disposition mes récoltes, offrant ainsi à ceux qui apprécient les bienfaits 
-                d'une alimentation saine la possibilité de savourer des produits cultivés avec soin et respect de la nature.</p>
+                d'une alimentation saine la possibilité de savourer des produits cultivés avec soin et respect de la nature.</h5>
         </div>
     </div>
 </div>
