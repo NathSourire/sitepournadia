@@ -59,8 +59,13 @@ body {
 /* style cards astuce */
 .astucecard{
     margin-top: 100px;
-    color: #2e0908;
+    color: #8b856e !important;
     border: 2px solid;
+    border-color: #8b856e;
+}
+
+.astucecard h3{
+    color: #2e0908 !important;
 }
 
 #headNav {

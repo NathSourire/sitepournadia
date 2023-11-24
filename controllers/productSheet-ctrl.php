@@ -12,6 +12,14 @@ try {
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
+            // récuperation du pays de naissance nettoyage et validation
+    $quantity = filter_input(INPUT_POST, 'quantity');
+    if (!in_array($quantity, QUANTITY )) {
+        //ou if (in_array($nativeCountry,$nativeCountryList) == false){}
+        // ou if (!array_key_exists($nativeCountry, NATIVECOUNTRY)) {
+        $errors['quantity'] = 'Veuillez entrer une quantité valide';
+    }
+    
     }
 } catch (\Throwable $th) {
 

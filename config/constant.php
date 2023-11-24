@@ -16,3 +16,5 @@ define('ADMIN', 1);
 // flashmessages
 define('ERROR', 0);
 define('SUCCESS', 1);
+//quantité sur fiche produit
+define ('QUANTITY', [1,2,3,4,5,6,7,8,9,10]);

@@ -9,9 +9,9 @@
 <div id="nadHistory" class="container">
     <div class="row align-items-center mt-2 p-1">
         <h2 class=" text-center my-5">Qui suis-je</h2>
-        <div class="col-12 col-md-6 "><img class="w-100" src="/public/assets/img/photoaremplacer.jpg" alt="Photo de Nad"></div>
+        <div class="col-12 mt col-md-6 "><img class="w-100" src="/public/assets/img/mettez-vous-au-jardinage-c-est-bon-pour-la-sante.jpeg" alt="Photo de Nad"></div>
         <div class="col-12 col-md-6">
-            <h5 class="text-justify">Je suis passionnée de jardinage depuis plus de 30 ans et j'ai acquis de nombreuses techniques et 
+            <h5 class="text-justify mt-3">Je suis passionnée de jardinage depuis plus de 30 ans et j'ai acquis de nombreuses techniques et 
                 savoir-faire au fil du temps. Grâce à mes années d'expérience, ma production de fruits et de légumes est plutôt généreuse. 
                 Afin de partager cette abondance, je propose le surplus à des personnes qui apprécient les produits de qualité.<br>
                 Ma philosophie repose sur une approche naturelle de la culture : je privilégie une alimentation saine sans pesticides, 
@@ -25,7 +25,7 @@
 <h2 class="text-center my-5">Les Produits du moment</h2>
 <section class="container-fluid mb-5">
     <div class="row justify-content-center ">
-        <div id="carouselExampleAutoplaying" class="carousel slide col-md-6" data-bs-ride="carousel">
+        <div id="carouselExampleAutoplaying" class="carousel slide col-md-5" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
                 $firstItem = true; // Ajout d'une variable pour suivre le premier élément
@@ -33,7 +33,7 @@
                 ?>
                     <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
                         <a href="/controllers/productSheet-ctrl.php?id_galleries=<?= $image->id_galleries ?>&id_product=<?= $image->id_product ?>">
-                            <img src="/public/uploads/image/<?= $image->image ?>" class="d-block w-100" alt="<?= $image->name_img ?>"></a>
+                            <img class="d-block align-item-center w-100" src="/public/uploads/image/<?= $image->image ?>" alt="<?= $image->name_img ?>"></a>
                     </div>
                 <?php
                     $firstItem = false; // Marquer le premier élément comme traité après la première itération

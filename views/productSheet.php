@@ -4,15 +4,24 @@
         <div class="col-8 col-md-5 ms-5">
             <h3 class="mt-5 mb-3 "><?= $product->name_product ?></h3>
             <p class="text-justify"><?= nl2br(html_entity_decode($product->description))  ?></p>
-            <form class="row " id="productform" enctype="multipart/form-data" method="post" novalidate>
+            <form class="row" id="productform" enctype="multipart/form-data" method="post">
                 <div>
                     <div>
                         <p><?= $product->price ?></p>
                     </div>
-                    <div>
-                        <label class="form-label ms-3 my-3 " for="quantity">Quantité</label>
-                        <select class="" name="quantity" id="quantity"></select>
-                    </div>
+                    <label class="form-label ms-3 my-3 " for="quantity">Quantité</label>
+                    <select class="form-label ms-3 my-3 " id="quantity" name="quantity">
+                            <option selected disabled value="">0</option>
+                            <?php
+                            foreach (QUANTITY as $key => $value) { ?>
+                                <option>
+                                    <?= $value ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                        <p class="red">
+                            <?= $errors['nativeCountry'] ?? '' ?>
+                        </p>
                     <div class="d-flex justify-content-center">
                         <button class="btn btn-success my-3 ms-3" type="submit">Ajout au panier</button>
                     </div>

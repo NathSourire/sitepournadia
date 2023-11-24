@@ -34,13 +34,13 @@ try {
     $errors = $th->getMessage();
 
 
-    include __DIR__ . '/../../views/templates/dashboardheader.php';
+    include __DIR__ . '/../../views/templates/header.php';
     include __DIR__ . '/../../views/templates/error.php';
     include __DIR__ . '/../../views/templates/footer.php';
     die;
 }
 
-include __DIR__ . '/../../views/templates/dashboardheader.php';
+include __DIR__ . '/../../views/templates/header.php';
 include __DIR__ . '/../../views/dashboard/dashboard_change_prod.php';
 // include __DIR__ . '/../../views/templates/footer.php';
 
