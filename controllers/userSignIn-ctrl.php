@@ -28,7 +28,8 @@ try {
             }
             unset($users->password);
             $_SESSION['users'] = $users;
-
+            header('location: /controllers/userSheet-ctrl.php');
+            die;
             
             // if ($_SESSION['users']->role_management === 1) {
             // header('location: /controllers/dashboard/dashboard_home-ctrl.php');

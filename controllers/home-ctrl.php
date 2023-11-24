@@ -5,9 +5,7 @@ require_once __DIR__ . '/../models/Galleries.php';
 try {
     $images = Galleries::get_all();
     $errors = [];
-    if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    
-    }
+
 } catch (\Throwable $th) {
 
     $errors = $th->getMessage();

@@ -25,7 +25,7 @@
 <h2 class="text-center my-5">Les Produits du moment</h2>
 <section class="container-fluid mb-5">
     <div class="row justify-content-center ">
-        <div id="carouselExampleAutoplaying" class="carousel slide col-md-5" data-bs-ride="carousel">
+        <div id="carouselExampleAutoplaying" class="carousel slide col-md-6" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
                 $firstItem = true; // Ajout d'une variable pour suivre le premier élément
@@ -33,7 +33,7 @@
                 ?>
                     <div class="carousel-item <?php echo $firstItem ? 'active' : ''; ?>">
                         <a href="/controllers/productSheet-ctrl.php?id_galleries=<?= $image->id_galleries ?>&id_product=<?= $image->id_product ?>">
-                            <img class="d-block align-item-center w-100" src="/public/uploads/image/<?= $image->image ?>" alt="<?= $image->name_img ?>"></a>
+                            <img class="d-block w-100" src="/public/uploads/image/<?= $image->image ?>" alt="<?= $image->name_img ?>"></a>
                     </div>
                 <?php
                     $firstItem = false; // Marquer le premier élément comme traité après la première itération
