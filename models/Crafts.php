@@ -51,6 +51,19 @@ class Craft
         }
     }
 
+    // fonction qui permet de recuperer une catégorie précise
+    public static function get(int $id_crafts): object|bool
+    {
+        $pdo = Database::connect();
+        $sql = 'SELECT * FROM `crafts` 
+        WHERE `id_crafts` = :id_crafts;';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_crafts', $id_crafts, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetch();
+        return $result;
+    }
+
     public static function get_all(): array
     {
         $pdo = Database::connect();

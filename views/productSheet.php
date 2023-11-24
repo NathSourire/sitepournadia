@@ -3,7 +3,7 @@
         <div class="col-12 col-md-6 "><img class="w-100" src="/public/uploads/image/<?= $images->image ?>" alt="<?= $images->name_img ?>"></div>
         <div class="col-8 col-md-5 ms-5">
             <h3 class="mt-5 mb-3 "><?= $product->name_product ?></h3>
-            <p class="text-justify"><?= $product->description ?></p>
+            <p class="text-justify"><?= nl2br(html_entity_decode($product->description))  ?></p>
             <form class="row " id="productform" enctype="multipart/form-data" method="post" novalidate>
                 <div>
                     <div>

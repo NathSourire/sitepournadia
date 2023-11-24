@@ -1,3 +1,43 @@
+
+<form enctype="multipart/form-data" method="post">
+<div class="container">
+    <div class="row">
+        <h3>Les illustration <a href="#craft">Ajouter</a> </h3> 
+        <table class="table">
+            <thead>
+                <th class=" bg-transparent ">Nom de l'astuce</th>
+                <th class=" bg-transparent ">Astuce</th>
+                <!-- <th class=" bg-transparent ">Archivé le </th> -->
+                <th class=" bg-transparent ">Modifier</th>
+                <!-- <th class=" bg-transparent ">Archiver</th> -->
+                <!-- <th class=" bg-transparent ">Restorer</th> -->
+            </thead>
+            <tbody>
+                <?php
+        foreach ($crafts as $craft) {
+                ?>
+                    <tr>
+                        <td class=" bg-transparent "><?= $craft->name_craft ?></td>
+                        <td class=" bg-transparent "><?= $craft->astuce ?></td>
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_change_craft-ctrl.php?id_crafts=<?= $craft->id_crafts ?>">
+                                <img src="/public/assets/img/btnwrite.png" alt="stylo">
+                            </a>
+                        </td>
+                        <!-- <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=archive&id_galleries=<?= $image->id_galleries ?>">
+                                <img src="/public/assets/img/btnarchived.png" alt="archive">
+                            </a>
+                        </td>
+                        <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_galleries_ctrl.php?action=restor&id_galleries=<?= $image->id_galleries ?>">
+                                <img src="/public/assets/img/btndelet.png" alt="poubelle">
+                            </a>
+                        </td> -->
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <div class="container mt-5" id="craft">
     <div>
         <form class="row " id="astuceform" enctype="multipart/form-data" method="post" novalidate>

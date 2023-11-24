@@ -32,6 +32,7 @@ body {
     background-color: #E9D8A6;
 }
 
+/* style cards galerie */
 .gallery img {
     border-radius: 3px;
     border-color: #2e0908;
@@ -53,6 +54,13 @@ body {
 .logonav {
     height: 100px;
     width: 150px;
+}
+
+/* style cards astuce */
+.astucecard{
+    margin-top: 100px;
+    color: #2e0908;
+    border: 2px solid;
 }
 
 #headNav {

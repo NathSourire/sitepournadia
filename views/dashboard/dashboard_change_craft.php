@@ -5,11 +5,11 @@
                 <div>
                     <label class="form-label form-control-lg" for="name_craft">Nom de l'astuce</label>
                     <input class="form-control form-control-lg" type="text" name="name_craft" id="name_craft"  
-                    value="<?= isset($productobj->name_product) ? htmlspecialchars($productobj->name_product) : '' ?>">
+                    value="<?= isset($craftobj->name_craft ) ? htmlspecialchars($craftobj->name_craft ) : '' ?>">
                 </div>
                 <div class="imgtext my-5">
                     <label class="form-label form-control-lg" for="astuce">Astuce</label>
-                    <textarea class="form-control form-control-lg" name="astuce" id="astuce" cols="50" rows="10"><?= isset($productobj->name_product) ? htmlspecialchars($productobj->name_product) : '' ?></textarea>
+                    <textarea class="form-control form-control-lg" name="astuce" id="astuce" cols="50" rows="10"><?= isset($craftobj->astuce) ? nl2br(html_entity_decode(htmlspecialchars($craftobj->astuce))) : '' ?></textarea>
                 </div>
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-light my-3" type="submit">Modifier</button>
@@ -18,3 +18,5 @@
         </form>
     </div>
 </div>
+
+        

@@ -23,7 +23,7 @@
                             <td class=" bg-transparent "><a href="/public/uploads/image/<?= $product->image ?>" target="_blank"><?= $product->image ?></a></td>
                         <?php } ?>
                         <td class=" bg-transparent "><?= $product->price ?></td>
-                        <td class=" bg-transparent "><?= $product->description ?></td>
+                        <td class=" bg-transparent "><?= nl2br(html_entity_decode($product->description)) ?></td>
                         <!-- <td class=" bg-transparent "><?= $product->archived_product_at ?></td> -->
                         <td class=" bg-transparent "><a href="/controllers/dashboard/dashboard_change_prod-ctrl.php?id_product=<?= $product->id_product ?>">
                                 <img src="/public/assets/img/btnwrite.png" alt="stylo">
