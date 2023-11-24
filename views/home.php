@@ -3,7 +3,7 @@
     FlashMessage::display();
     ?>
 </div>
-<div class="imgBackground opacity-75">
+<div class="imgBackground opacity-100">
     <img class="w-100" src="/public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
 </div>
 <div id="nadHistory" class="container">
