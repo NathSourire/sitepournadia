@@ -6,6 +6,11 @@
             <p class="text-justify"><?= nl2br(html_entity_decode($product->description))  ?></p>
             <form class="row" id="productform" enctype="multipart/form-data" method="post">
                 <div>
+                <?php
+                    // Vérifiez si l'utilisateur est connecté
+                    if (isset($_SESSION['users'])) {
+                        // Vérifiez le rôle de l'utilisateur (supposons que le rôle est stocké dans la clé 'id_role')
+                        $userRole = $_SESSION['users'];?>
                     <div>
                         <p><?= $product->price ?></p>
                     </div>
@@ -26,6 +31,9 @@
                         <button class="btn btn-success my-3 ms-3" type="submit">Ajout au panier</button>
                     </div>
                 </div>
+                <?php
+                        }
+                    ?>
             </form>
         </div>
     </div>
