@@ -34,9 +34,10 @@ body {
 
 /* style cards galerie */
 .gallery img {
-    border-radius: 3px;
-    border-color: #2e0908;
+    border-radius: 4px;
+    /* border-color: #2e0908; */
     border: 2px solid;
+    border-color: #8b856e;
     /* box-shadow: rgba(0, 0, 0, 0.502) 0px 10px 36px 0px, rgba(0, 0, 0, 0.359) 0px 0px 0px 1px; */
     height: 300px;
     width: 300px;

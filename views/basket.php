@@ -1,9 +1,3 @@
-<div>
-    <?php
-    FlashMessage::display();
-    ?>
-</div>
-
 <div class="container">
     <div class="row">
         <h3>Les fiches produits</h3>

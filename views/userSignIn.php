@@ -1,12 +1,7 @@
 <div>
-    <?php
-    FlashMessage::display();
-    ?>
-</div>
-<div>
-    <h2 class="text-center mt-5" >Connexion</h2>
+    <h2 class="text-center mt-5">Connexion</h2>
     <form id="form" enctype="multipart/form-data" method="post">
-        <div class="container my-5" >
+        <div class="container my-5">
             <div class="row results">
                 <div class="inputform offset-1 offset-md-1 col-10 col-md-10 ">
                     <div class="col-12">
@@ -20,5 +15,6 @@
                     <div class="d-flex justify-content-center"><button class=" btn btn-light my-2" type="submit">Envoyer !</button></div>
                 </div>
             </div>
+        </div>
     </form>
 </div>

@@ -1,9 +1,3 @@
-<!-- <div>
-    <?php
-    FlashMessage::display();
-    ?>
-</div> -->
-
 <div>
     <h2 class="text-center mt-5">Votre inscription</h2>
     <form id="form" enctype="multipart/form-data" method="post">

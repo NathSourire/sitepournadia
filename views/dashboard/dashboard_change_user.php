@@ -86,7 +86,6 @@
                         <p class="ms-2 text-end">* Champ obligatoire</p>
                     </div>
                 </div>
-
             </div>
         </fieldset>
     </form>

@@ -1,5 +1,5 @@
-    <div class="">
-        <h3>Les Utilisateurs</h3>
+    <div class=" mt-5">
+<h3>Les Utilisateurs <a href="/controllers/userSignUp-ctrl.php">Ajouter</a></h3>
         <table class="table">
             <thead>
                 <th class=" bg-transparent ">Id user</th>

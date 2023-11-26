@@ -1,8 +1,3 @@
-<div>
-    <?php
-    FlashMessage::display();
-    ?>
-</div>
 <div class="imgBackground opacity-100">
     <img class="w-100" src="/public/assets/img/legume_page_accueil.jpg" alt="Legume page d'accueil">
 </div>
@@ -23,7 +18,7 @@
     </div>
 </div>
 <h2 class="text-center my-5">Les Produits du moment</h2>
-<section class="container-fluid mb-5">
+<div class="container-fluid mb-5">
     <div class="row justify-content-center ">
         <div id="carouselExampleAutoplaying" class="carousel slide col-md-5" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -50,4 +45,4 @@
             </button>
         </div>
     </div>
-</section>
+</div>

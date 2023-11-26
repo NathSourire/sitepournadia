@@ -1,12 +1,7 @@
 <div>
-    <?php
-    FlashMessage::display();
-    ?>
-</div>
-<div>
     <h2 class="text-center mt-5">Vos informations personnels</h2>
     <form id="form" enctype="multipart/form-data" method="post">
-        <fieldset class="container  ident">
+        <fieldset class="container  ident mt-5">
             <div class="row">
                 <div class="inputform offset-1 offset-md-1 col-10 col-md-10">
                     <?php

@@ -41,10 +41,10 @@
                                     Dashboard
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
-                                    <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_galleries_ctrl.php">Illustration</a></li>
-                                    <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
-                                    <li><a class="dropdown-item" href="/controllers/dashboard/dashboard_add_craft-ctrl.php">Astuces</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="/controllers/dashboard/dashboard_product_ctrl.php">Fiches Produits</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="/controllers/dashboard/dashboard_galleries_ctrl.php">Illustration</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="/controllers/dashboard/dashboard_users_ctrl.php">Utilisateurs</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="/controllers/dashboard/dashboard_add_craft-ctrl.php">Astuces</a></li>
                                 </ul>
                             </li>
                     <?php
@@ -59,3 +59,9 @@
             </div>
         </div>
     </nav>
+
+    <div>
+        <?php
+        FlashMessage::display();
+        ?>
+    </div>

@@ -1,6 +1,6 @@
 
 <form enctype="multipart/form-data" method="post">
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <h3>Les illustration <a href="#illustration">Ajouter</a> </h3> 
         <table class="table">
@@ -50,7 +50,7 @@
     </div>
     <div class="offset-1 offset-md-1 col-10 col-md-10">
         <label class="form-label" for="picture"></label>
-        <input class="form-control form-control-lg" type="file" id="picture" name="picture" accept=".webp, .png, .jpeg, .jpg, .gif" value="<?= isset($imageobj->image) ? htmlspecialchars($imageobj->image) : '' ?>">
+        <input class="form-control form-control-lg" type="file" id="picture" name="picture" accept=".webp, .png, .jpeg, .jpg">
         <p class="red">
             <?= $errors['picture'] ?? '' ?>
         </p>
