@@ -28,8 +28,6 @@ try {
             $password = password_hash($password1, PASSWORD_BCRYPT);
         }
 
-
-
         if (empty($errors)) {
             $newUser = new Users();
             $newUser->set_lastname($lastname);

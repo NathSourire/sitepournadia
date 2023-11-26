@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row ">
         <h3>Les fiches produits <a href="#productsheet">Ajouter</a></h3>
         <table class="table my-5">
@@ -46,7 +46,7 @@
             </tbody>
         </table>
 
-        <div class="container" id="productsheet" >
+        <div class="container" id="productsheet">
             <div class="productsheet row">
                 <form class="row " id="productform" enctype="multipart/form-data" method="post" novalidate>
                     <div class="offset-1 offset-md-1 col-10 col-md-10">
@@ -57,7 +57,6 @@
                         <div class="imgtext my-5">
                             <label class="form-label form-control-lg" for="description">Description</label>
                             <textarea class="form-control form-control-lg" name="description" id="description" cols="50" rows="10"></textarea>
-
                         </div>
                         <div>
                             <label class="form-label form-control-lg" for="price">Prix</label>

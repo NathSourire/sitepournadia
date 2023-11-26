@@ -1,7 +1,7 @@
 <div>
-    <h2>Votre identité</h2>
+<h2 class="text-center mt-5">Vos informations personnels</h2>
     <form id="form" enctype="multipart/form-data" method="post">
-        <fieldset class="container  ident">
+        <fieldset class="container  ident mt-5">
             <div class="row">
                 <div class="inputform offset-1 offset-md-1 col-10 col-md-10">
                     <div>
@@ -39,7 +39,7 @@
                     <div>
                         <label class="form-label" for="city">ville *</label>
                         <select class="form-select form-select-lg " name="city" id="city">
-                            <option selected>Ville</option>
+                            <option selected><?= isset($userObj->city) ? htmlspecialchars($userObj->city) : '' ?></option>
                         </select>
                         <p class="red">
                             <?= $errors['city'] ?? '' ?>

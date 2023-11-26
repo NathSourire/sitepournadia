@@ -1,6 +1,6 @@
     <div class=" mt-5">
 <h3>Les Utilisateurs <a href="/controllers/userSignUp-ctrl.php">Ajouter</a></h3>
-        <table class="table">
+        <table class="table mt-5">
             <thead>
                 <th class="bg-transparent">Id user</th>
                 <th class="bg-transparent">Nom</th>

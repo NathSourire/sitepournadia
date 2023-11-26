@@ -56,7 +56,7 @@ try {
             $newUser->set_id_user($id_user);
             $saved = $newUser->update();
             if ($saved == true) {
-                header('location: /controllers/userSignIn-ctrl.php');
+                header('location: /');
                 FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
             } else {
                 FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);

@@ -49,12 +49,15 @@
                     <div>
                         <label class="form-label" for="city">ville *</label>
                         <select class="form-select form-select-lg" name="city" id="city">
-                            <option selected>Ville</option>
+                            <option selected>
+                            <?= isset($userObj->city) ? htmlspecialchars($userObj->city) : '' ?>
+                            </option>
                         </select>
                         <p class="red">
                             <?= $errors['city'] ?? '' ?>
                         </p>
                     </div>
+
                     <div>
                         <label class="form-label" for="phone">Téléphone *</label>
                         <input class="form-control form-control-lg" type="text" id="phone" name="phone" pattern="<?= REGEX_TEL ?>" value="<?= isset($userObj->phone) ? htmlspecialchars($userObj->phone) : '' ?>">
