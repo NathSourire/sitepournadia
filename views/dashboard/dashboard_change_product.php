@@ -7,7 +7,7 @@
                     <input class="form-control form-control-lg" type="text" name="name_product" id="name_product" value="<?= isset($productobj->name_product) ? htmlspecialchars($productobj->name_product) : '' ?>">
                 </div>
                 <div class="imgtext my-5 row">
-                    <textarea class="form-label form-control-lg my-3 " name="description" id="description" cols="50" rows="10" value="<?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?>"><?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?></textarea>
+                    <textarea class="form-label form-control-lg my-3 " name="description" id="description" cols="50" rows="10" value="<?= isset($productobj->description) ? htmlspecialchars($productobj->description) : '' ?>"><?= isset($productobj->description) ? nl2br(html_entity_decode(htmlspecialchars($productobj->description))) : '' ?></textarea>
                     <label class="form-label " for="description"></label> <br>
                 </div>
                 <div>

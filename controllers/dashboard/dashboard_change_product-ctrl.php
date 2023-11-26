@@ -70,7 +70,7 @@ try {
             $newImage->set_id_product($id_product);
             $saved = $newImage->insert();
         }
-        if ($saved) {
+        if ($saved == true) {
             FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
         } else {
             FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);

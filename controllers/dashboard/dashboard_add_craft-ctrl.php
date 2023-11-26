@@ -18,7 +18,9 @@ try {
 
             if ($saved == true) {
                 header('location: /controllers/dashboard/dashboard_add_craft-ctrl.php');
-                die;
+                FlashMessage::set('L\'enregistrement s\'est bien déroulée!', SUCCESS);
+            } else {
+                FlashMessage::set('L\'enregistrement s\'est mal passée!', ERROR);
             }
         }
 
