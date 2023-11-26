@@ -16,7 +16,7 @@
                     </div>
                     <label class="form-label ms-3 my-3 " for="quantity">Quantité</label>
                     <select class="form-label ms-3 my-3 " id="quantity" name="quantity">
-                            <option selected disabled value="">0</option>
+                            <option selected disabled>0</option>
                             <?php
                             foreach (QUANTITY as $key => $value) { ?>
                                 <option>
